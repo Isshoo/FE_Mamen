@@ -3,7 +3,8 @@ $yellow: #fba635;
 $brown: #fdac58;
 $red: #b81202;
 $cream: whitesmoke;
-$black: #072526;
+$black: #174c4e;
+$dark: #072526;
 
 /* font */
 $info-home: "Arizonia";
@@ -62,7 +63,7 @@ html {
   scroll-behavior: smooth;
 
   body {
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -358,11 +359,7 @@ main {
     right: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(
-      0deg,
-      whitesmoke 50%,
-      rgba(255, 255, 255, 0) 90%
-    );
+    background: linear-gradient(0deg, white 50%, rgba(255, 255, 255, 0) 90%);
   }
 
   picture {
@@ -417,7 +414,7 @@ main {
         text-shadow: 1px 1px 3px rgb(0, 0, 0);
         line-height: 1.4;
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.735);
+        color: rgba(255, 255, 255, 0.83);
       }
 
       button {
@@ -476,7 +473,7 @@ footer {
   display: flex;
   padding-block: 5rem 3rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: $red;
+  background-color: $dark;
 
   a,
   h3,

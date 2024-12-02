@@ -65,7 +65,7 @@ export default function homeGsapJs() {
   });
   gsap.from('headline-section section div article', {
     opacity: 0,
-    y: 20,
+    x: 0,
     duration: 2.5,
     ease: 'power2.inOut',
     stagger: 0.2,

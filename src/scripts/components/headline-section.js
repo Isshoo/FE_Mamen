@@ -18,7 +18,7 @@ class HeadlineSection extends HTMLElement {
                 <h3>Kuliner</h3>
                 <p>Dapatkan kuliner-kuliner terbaik khas Manado dari berbagai daerah yang mungkin saja belum kau ketahui. Eksplore sekarang!</p>
             </article>
-            <article>
+            <article class="middle-art">
                 <picture><i class="fa-solid fa-fingerprint"></i></picture>
                 <h3>Kerajinan</h3>
                 <p>kerajinan-kerajinan tradisional yang beragam dari daerah Manado dapat kamu temukan disini. Jangan lupa untuk berkunjung!</p>

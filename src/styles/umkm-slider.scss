@@ -1,3 +1,15 @@
+/* main color */
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+
+/* font */
+$info-home: "Arizonia";
+$font-default: "Oxygen";
+
 .sliderumkm-secton {
   position: relative;
   border-radius: 20px;
@@ -48,7 +60,7 @@
     &:nth-child(2) {
       position: absolute;
       top: 0;
-      left: 0;
+      right: 0;
       width: 100%;
       height: 100%;
       transform: translateY(0);
@@ -67,7 +79,7 @@
     }
     @for $i from 3 through 1000 {
       &:nth-child(#{$i}) {
-        left: calc(11% + (145px * ($i - 2)));
+        right: calc(11% + (145px * ($i - 2)));
         background-size: cover;
         box-shadow: -5px 5px 10px rgb(0, 0, 0);
 
@@ -85,14 +97,14 @@
   justify-content: center;
   gap: 20px;
   bottom: 2.5rem;
-  left: 2rem;
+  right: 2rem;
 
   span {
     position: relative;
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background-color: transparent;
+    background-color: $yellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +170,7 @@
   }
   .slider {
     top: 0;
-    left: 0;
+    right: 0;
     position: absolute;
     width: 100%;
     height: 67%;
@@ -180,7 +192,7 @@
       }
       @for $i from 3 through 100 {
         &:nth-child(#{$i}) {
-          left: #{($i - 3) * 110}px;
+          right: #{($i - 3) * 110}px;
         }
       }
     }
@@ -208,7 +220,7 @@
 @media screen and (max-width: 450px) {
   .slider {
     top: 0px;
-    left: 0;
+    right: 0;
     position: absolute;
     width: 100%;
     height: 70%;
@@ -227,7 +239,7 @@
       }
       @for $i from 3 through 100 {
         &:nth-child(#{$i}) {
-          left: #{($i - 3) * 110}px;
+          right: #{($i - 3) * 110}px;
         }
       }
 

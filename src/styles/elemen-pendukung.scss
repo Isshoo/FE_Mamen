@@ -14,7 +14,7 @@ $font-default: "Oxygen";
 
 headline-section {
   width: 100%;
-  padding: 3rem 8% 5rem;
+  padding: 3rem 8% 8rem;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -24,7 +24,7 @@ headline-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 4rem;
 
     h2 {
       font-family: $font-default;
@@ -32,6 +32,20 @@ headline-section {
       font-weight: 700;
       text-align: center;
       width: 100%;
+      color: $black;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: $red;
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+      }
     }
 
     div {
@@ -42,6 +56,25 @@ headline-section {
       justify-content: space-evenly;
       flex-wrap: wrap;
 
+      article.middle-art {
+        background-color: $black;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: -5px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        h3,
+        p {
+          color: white;
+        }
+        picture {
+          i {
+            color: $icon;
+          }
+        }
+      }
       article {
         display: flex;
         flex-direction: column;
@@ -55,6 +88,13 @@ headline-section {
         border-radius: 16px;
         background-color: white;
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: -5px 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
         picture {
           i {
@@ -80,16 +120,29 @@ headline-section {
 }
 
 #infoUmkmCon {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  padding-block: 4rem;
   position: relative;
+  background-image: url(../public/images/hero-image.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-block: 8rem;
   display: flex;
   align-items: center;
+  .green-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #072526d1;
+    z-index: 1;
+  }
 }
 .infoUMKM {
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   padding-inline: 8%;
 
@@ -106,6 +159,7 @@ headline-section {
       h3 {
         text-align: center;
         font-size: 2.5rem;
+        color: white;
         span {
           font-family: $info-home;
           font-size: 5rem;
@@ -120,6 +174,7 @@ headline-section {
         font-size: 1rem;
         line-height: 2rem;
         text-align: center;
+        color: white;
       }
     }
 
@@ -151,20 +206,6 @@ dataline-section {
   justify-items: center;
 
   position: relative;
-  background-image: url(../public/images/hero-image.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  .green-filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #072526d1;
-    z-index: -1;
-  }
 
   #datalineCon {
     z-index: 10;
@@ -182,7 +223,7 @@ dataline-section {
       flex-direction: column;
 
       p {
-        color: white;
+        color: black;
         font-family: $font-default;
         font-size: 2rem;
         line-height: 2.5rem;
@@ -193,7 +234,7 @@ dataline-section {
         font-size: 1rem;
         padding: 0.75rem 1.25rem;
         background-color: $yellow;
-        color: white;
+        color: black;
       }
     }
   }

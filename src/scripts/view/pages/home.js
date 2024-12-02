@@ -29,7 +29,11 @@ const Home = {
       </section>
       <headline-section></headline-section>
         <section id="infoUmkmCon">
+        <div class="green-filter"></div>
           <div class="infoUMKM">
+          <div id="umkm-list">
+                <umkm-slider></umkm-slider>
+            </div>
             <div class="info">
               <div class="judul">
                 <h3><span>Ayo</span> cari tahu</h3>
@@ -45,9 +49,6 @@ const Home = {
                 <a href="#/umkms">List UMKM</a>
               </div>
             </div>
-            <div id="umkm-list">
-                <umkm-slider></umkm-slider>
-              </div>
           </div>
         </section>
         <dataline-section></dataline-section>
