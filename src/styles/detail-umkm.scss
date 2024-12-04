@@ -32,7 +32,7 @@ $green: #36b372;
     font-size: 1rem;
     cursor: pointer;
 
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     padding: 0.5rem 1rem;
     border: 1px solid black;
@@ -207,6 +207,7 @@ umkm-freedetail {
         color: black;
         padding: 0.5rem 1rem;
         border: 1px solid black;
+        border-radius: 5px;
         cursor: pointer;
         box-shadow: -2px 2px 5px black;
         transition:
