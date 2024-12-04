@@ -15,7 +15,7 @@ class DatalineSection extends HTMLElement {
               <p>"Exceptional service isn’t just a perk—it’s your most powerful promotion."</p>
             </div>
             <div class="category-line">
-              <section class="category-list">
+              <section class="category-list left">
                 <div class="category-icons umkm">
                   <article>
                     <picture><i class="fa-solid fa-user-tie"></i></picture>
@@ -34,7 +34,7 @@ class DatalineSection extends HTMLElement {
                   <h3>UMKM</h3>
                 </div>
               </section>
-              <section class="category-list">
+              <section class="category-list right">
                 <div class="category-sub right">
                   <h3>Product</h3>
                 </div>

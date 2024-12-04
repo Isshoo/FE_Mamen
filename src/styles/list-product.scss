@@ -9,7 +9,7 @@ $green: #36b372;
 
 .product-home-con {
   width: 100%;
-  padding: 2rem 8%;
+  padding: 2rem 8% 3rem;
   position: relative;
   overflow: hidden;
 
@@ -331,6 +331,7 @@ $green: #36b372;
   width: 100%;
   padding: 1rem;
   z-index: 10;
+  min-height: 472px;
 
   .product-card {
     min-width: 250px;
@@ -348,6 +349,7 @@ $green: #36b372;
 //responsive
 @media screen and (max-width: 768px) {
   .product-home-con {
+    padding: 2rem 8% 2rem;
     .homeProdTitle {
       display: flex;
       justify-content: center;

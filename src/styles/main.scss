@@ -496,43 +496,15 @@ main {
     }
 
     .review-cons {
-      background-image: url(../public/images/background-review.jpeg);
+      background-image: url(../public/images/sctionPromotion.jpg);
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       position: relative;
       margin-block: 3rem;
-      &::before {
-        content: "";
-        position: absolute;
-        display: block;
-        top: -2px;
-        right: 0;
-        width: 100%;
-        height: 20%;
-        background: linear-gradient(
-          180deg,
-          white 10%,
-          rgba(255, 255, 255, 0) 90%
-        );
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        bottom: -2px;
-        right: 0;
-        width: 100%;
-        height: 20%;
-        background: linear-gradient(
-          0deg,
-          white 10%,
-          rgba(255, 255, 255, 0) 90%
-        );
-      }
 
       .white-filter {
-        background-color: rgba(255, 255, 255, 0.347);
+        background-color: rgba(255, 255, 255, 0.527);
         position: absolute;
         width: 100%;
         height: 100%;
@@ -554,8 +526,7 @@ main {
         padding-block: 2rem;
         max-width: 700px;
         line-height: 1.4;
-        font-family: $info-home;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
         color: $yellow;
         text-align: center;
       }

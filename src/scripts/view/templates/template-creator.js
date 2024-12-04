@@ -136,7 +136,8 @@ const createReviewItemTemplate = (review) => `
                 <p>${review.name}</p>
               </div>
               <div class="review-rating">
-                <h4><i>&#9734;</i>${review.user_rating}</h4>
+                <i class="fa-solid fa-star"></i>
+                <h4>${review.user_rating}</h4>
               </div>
             </div>
             <div class="review-des">
@@ -156,7 +157,8 @@ const createHomeReviewItemTemplate = (review) => `
                 <p>${review.name}</p>
               </div>
               <div class="review-rating">
-                <h4><i>&#9734;</i>${review.user_rating}</h4>
+                <i class="fa-solid fa-star"></i>
+                <h4>${review.user_rating}</h4>
               </div>
             </div>
             <div class="review-des">

@@ -130,4 +130,88 @@ export default function homeGsapJs() {
   });
 
   // DATALINE
+  gsap.from('.dataline p', {
+    opacity: 0,
+    y: 20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.dataline',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.category-list.right', {
+    opacity: 0,
+    x: 20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.category-line',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.category-list.left', {
+    opacity: 0,
+    x: -20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.category-line',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.product-home-con .homeProdTitle h2', {
+    opacity: 0,
+    x: -20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.homeProdTitle',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.link-to-products', {
+    opacity: 0,
+    x: 20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.link-to-products',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.title-review-con', {
+    opacity: 0,
+    y: 20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.title-review-con',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
+  gsap.from('.closing-quotes p', {
+    opacity: 0,
+    y: 20,
+    duration: 1.5,
+    ease: 'power2.inOut',
+    scrollTrigger: {
+      trigger: '.closing-quotes p',
+      start: 'top 90%',
+      end: 'bottom 70%',
+      toggleActions: 'play none none reverse',
+    },
+  });
 }

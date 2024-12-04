@@ -1,9 +1,14 @@
 // color pallette
 $title: black;
-$yellow: #ff9e1b;
-$red: #da281c;
-$cream: #eeeeeeca;
 $black: rgb(255, 255, 255);
+
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$dark: #072526;
+$green: #36b372;
 
 .reviews {
   padding-top: 2rem;
@@ -165,6 +170,7 @@ form-review {
   gap: 1.2rem;
   border-bottom: 1px solid $yellow;
   padding: 0.8rem 1rem;
+  border-radius: 10px;
 
   max-width: 300px;
   width: 100%;
@@ -181,6 +187,7 @@ form-review {
     img {
       width: 33px;
       border-radius: 50%;
+      box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.832);
     }
     .review-name {
       width: 100%;
@@ -188,6 +195,24 @@ form-review {
       align-items: center;
       justify-content: start;
       gap: 1rem;
+
+      p {
+        position: relative;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding-block: 5px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $dark;
+        }
+      }
     }
   }
 
@@ -195,19 +220,23 @@ form-review {
     flex: 1;
     overflow: auto;
     p {
-      color: rgba(0, 0, 0, 0.799);
+      color: black;
       overflow: auto;
     }
   }
 
   .review-rating {
-    h4 {
-      color: #ff9e1b;
-
-      i {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    i {
         color: #ff9e1b;
-        margin-right: 0.25rem;
+        font-size: 1.25rem;
       }
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: #ff9e1b;
     }
   }
 
@@ -215,25 +244,33 @@ form-review {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 1rem;
+
+    p {
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
     .tggl {
       color: #da281c;
+      text-align: end;
     }
   }
 }
 
 .infinite-scroll {
-  padding-block: 2rem;
+  padding-block: 3rem;
   position: relative;
   display: flex;
   gap: 2rem;
   width: max-content;
   transform: translateX(100%);
   animation: infinite-scroll linear infinite;
+  min-height: 356.88px;
 
   .review-item {
-    background-color: whitesmoke;
-    box-shadow: 0px 5px 10px black;
+    background-color: white;
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.71);
   }
 }
 
