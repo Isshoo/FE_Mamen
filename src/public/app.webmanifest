@@ -4,7 +4,7 @@
   "name": "Manado Micro Enterprises Website",
   "short_name": "Mamen",
   "description": "Mamen adalah sebuah alternatif website bagi para pelaku UMKM untuk mempromosikan usaha mereka",
-  "theme_color": "#da281c",
+  "theme_color": "#fff",
   "background_color": "#fff",
   "display": "standalone",
   "start_url": "./index.html",

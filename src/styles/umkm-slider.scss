@@ -14,6 +14,25 @@ $font-default: "Oxygen";
   position: relative;
   border-radius: 20px;
 }
+.slide-title {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    font-family: $font-default;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+
+    span {
+      font-size: 1.5rem;
+      color: $yellow;
+    }
+  }
+}
 .slider-con {
   position: relative;
   width: 100%;
@@ -66,6 +85,18 @@ $font-default: "Oxygen";
       transform: translateY(0);
       box-shadow: -5px 5px 10px rgba(0, 0, 0, 0);
       background-size: cover;
+      &::after {
+        content: "";
+
+        position: absolute;
+        display: block;
+        bottom: -2px;
+        right: 0;
+        width: 100%;
+        height: 80%;
+        background: linear-gradient(0deg, black 1%, rgba(0, 0, 0, 0) 100%);
+        z-index: 100;
+      }
 
       .content {
         opacity: 1;
@@ -104,7 +135,7 @@ $font-default: "Oxygen";
     width: 50px;
     height: 50px;
     cursor: pointer;
-    background-color: $yellow;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +170,7 @@ $font-default: "Oxygen";
       padding: 0.5rem;
       color: white;
       font-size: 1rem;
-      border-bottom: 1px yellow solid;
+      border-bottom: 1px $yellow solid;
       text-shadow: 1px 1px 3px rgb(0, 0, 0);
     }
   }
@@ -156,10 +187,10 @@ $font-default: "Oxygen";
     flex-wrap: wrap;
     p {
       display: inline-block;
-      font-size: 1rem;
+      font-size: 0.75rem;
       color: white;
-      background-color: red;
-      padding: 0.5rem 1rem;
+      background-color: $red;
+      padding: 0.35rem 0.85rem;
     }
   }
 }

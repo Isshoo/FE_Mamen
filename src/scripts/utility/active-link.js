@@ -3,6 +3,13 @@ const setActiveLink = () => {
 
   // Ambil semua link dalam nav-menu
   const navLinks = document.querySelectorAll('.nav-link');
+  const profilNav = document.querySelector('.fa-regular.fa-user');
+
+  if (currentPath === '#/profile') {
+    profilNav.classList.add('active-link');
+  } else {
+    profilNav.classList.remove('active-link');
+  }
 
   navLinks.forEach((link) => {
     // Periksa apakah href dari link cocok dengan currentPath

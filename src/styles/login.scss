@@ -2,24 +2,53 @@
 $primary-color: #da281c;
 $background-color: white;
 
+/* main color */
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+
+.custom-ok-button {
+  background-color: #5126ff; /* Warna hijau */
+  color: white; /* Warna teks */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-ok-button:hover {
+  background-color: #4645a0; /* Warna hijau lebih gelap untuk hover */
+}
+
 .login {
   margin: auto;
   padding: 8%;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
 }
 
 .login-section {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 30rem;
+  height: 28rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  &.act {
+    flex-direction: row;
+  }
 
   .login-image {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: order 0.5s ease-in-out;
     img {
       width: 100%;
       height: 100%;
@@ -33,31 +62,7 @@ $background-color: white;
     padding: 2rem;
     background-color: $background-color;
     position: relative;
-
-    .toggle-buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      position: absolute;
-      left: -6.2rem;
-      top: 50%;
-      transform: translateY(-50%);
-      gap: 1rem;
-
-      button {
-        width: 100px;
-        padding: 0.5rem;
-        cursor: pointer;
-        color: white;
-
-        &.act {
-          background-color: $background-color;
-          color: $primary-color;
-
-          font-size: medium;
-        }
-      }
-    }
+    transition: order 0.5s ease-in-out;
 
     .form {
       display: none;
@@ -67,47 +72,55 @@ $background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 3rem;
+        gap: 1rem;
         height: 100%;
 
+        position: relative;
         .img {
-          margin-top: 2rem;
-          height: 40px;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          margin-top: 0;
+          right: 0;
+          position: absolute;
+          width: auto;
+          height: auto;
+
           a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
             cursor: pointer;
+            z-index: 100;
             img {
-              width: 118px;
-              height: 118px;
+              width: 70px;
+              height: 70px;
+
               border-radius: 50%;
+              overflow: hidden;
             }
           }
         }
 
-        div {
+        .form-body {
+          margin-top: 1.5rem;
+          flex: 1;
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.9rem;
 
           h2 {
             margin-bottom: 0.5rem;
-            color: $primary-color;
+            color: $red;
+            font-weight: 800;
+            font-size: 1.5rem;
           }
 
           div {
             display: flex;
             flex-direction: column;
+            gap: 0.1rem;
 
             label {
               display: flex;
               align-items: center;
-              margin-bottom: 0;
               color: black;
             }
 
@@ -148,15 +161,42 @@ $background-color: white;
             }
           }
         }
+        .form-buttons {
+          display: flex;
+          gap: 0.5rem;
+          flex-direction: column;
+          align-items: center;
 
-        button[type="submit"] {
-          justify-self: flex-end;
-          width: 100%;
-          padding: 0.7rem;
-          background-color: $primary-color;
-          color: white;
-          border: none;
-          cursor: pointer;
+          button[type="submit"] {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: $red;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            &:hover {
+              background-color: red;
+            }
+          }
+
+          p {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+
+            span {
+              cursor: pointer;
+              color: black;
+              font-weight: 700;
+              margin-left: 0.2rem;
+
+              &:hover {
+                color: $primary-color;
+              }
+            }
+          }
         }
       }
     }
@@ -171,6 +211,10 @@ $background-color: white;
   .login-section {
     height: 100vh;
     flex-direction: column;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    &.act {
+      flex-direction: column;
+    }
 
     .login-image {
       flex: none;
@@ -184,37 +228,8 @@ $background-color: white;
       flex: 1;
       .form {
         &.act {
-          button[type="submit"] {
-            margin-bottom: 3rem;
-          }
-        }
-      }
-      .toggle-buttons {
-        flex-direction: row;
-        left: 2rem;
-        top: -0.95rem;
-        gap: 0.5rem;
-      }
-
-      #loginForm {
-        position: relative;
-        .img {
-          margin-top: 0;
-          right: 0;
-          position: absolute;
-          width: auto;
-          height: auto;
-
-          a {
-            position: absolute;
-            top: -10px;
-            right: 0;
-            cursor: pointer;
-            z-index: 100;
-            img {
-              width: 70px;
-              height: 70px;
-            }
+          .form-buttons {
+            padding-bottom: 2rem;
           }
         }
       }

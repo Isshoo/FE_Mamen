@@ -1,5 +1,11 @@
-$yellow: #ff9e1b;
-$red: #da281c;
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+$green: #36b372;
 
 .separator {
   width: 100%;
@@ -16,19 +22,30 @@ $red: #da281c;
   gap: 1rem;
   h2 {
     font-size: 2rem;
-    color: $red;
+    color: $yellow;
     text-align: center;
   }
   button {
     width: 100%;
     display: inline-block;
     align-self: flex-end;
-    padding: 0.75rem 1rem;
-    background-color: black;
-    border-radius: 0.5rem;
-    color: white;
     font-size: 1rem;
     cursor: pointer;
+
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    box-shadow: -2px 2px 5px black;
+    transition:
+      color 0.4s,
+      transform 0.4s;
+
+    &:hover {
+      background-color: blue;
+      transform: translateY(-0.25rem);
+      color: white;
+    }
   }
 }
 

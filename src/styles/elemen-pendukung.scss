@@ -152,17 +152,16 @@ headline-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    justify-content: center;
 
     .judul {
-      padding-block: 1rem;
+      padding-block: 3rem 1rem;
+      border-bottom: 1px solid white;
       h3 {
-        text-align: center;
-        font-size: 2.5rem;
+        text-align: start;
+        font-size: 2rem;
         color: white;
         span {
-          font-family: $info-home;
-          font-size: 5rem;
+          font-size: 2rem;
           color: $yellow;
         }
       }
@@ -171,9 +170,9 @@ headline-section {
     .infoDesc {
       p {
         font-family: $font-default;
-        font-size: 1rem;
+        font-size: 1.25rem;
         line-height: 2rem;
-        text-align: center;
+        text-align: start;
         color: white;
       }
     }
@@ -183,10 +182,10 @@ headline-section {
       display: flex;
       align-items: center;
       width: 100%;
-      justify-content: center;
+      justify-content: end;
 
       a {
-        font-size: 0.75rem;
+        font-size: 1rem;
         width: auto;
         padding: 0.75rem 1.25rem;
         background-color: $button;
@@ -212,29 +211,85 @@ dataline-section {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+.dataline {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
 
-    .dataline {
-      width: 100%;
-      max-width: 520px;
+  p {
+    color: black;
+    font-family: $font-default;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+}
+
+.category-line {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .category-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    .category-icons {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 2rem;
-      flex-direction: column;
+      align-items: center;
 
-      p {
-        color: black;
-        font-family: $font-default;
-        font-size: 2rem;
-        line-height: 2.5rem;
-        text-align: center;
+      article {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        picture {
+          i {
+            font-size: 1.5rem;
+            color: $icon;
+          }
+        }
       }
 
-      button {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
-        background-color: $yellow;
-        color: black;
+      &.umkm {
+        article {
+          picture {
+            i {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+
+    .category-sub {
+      padding: 1rem 1.5rem;
+
+      &.right {
+        border-left: 2px solid $black;
+      }
+      &.left {
+        border-right: 2px solid $black;
+      }
+
+      h3 {
+        color: $black;
+        font-size: 1.25rem;
       }
     }
   }
@@ -245,12 +300,10 @@ dataline-section {
   .infoUMKM {
     .info {
       .judul {
-        padding-block: 0;
         h3 {
-          text-align: center;
-          font-size: 2rem;
+          font-size: 1.75rem;
           span {
-            font-size: 2rem;
+            font-size: 1.75rem;
           }
         }
       }
@@ -268,6 +321,7 @@ dataline-section {
 @media screen and (max-width: 768px) {
   #infoUmkmCon {
     padding-inline: 0;
+    padding-block: 2rem 4rem;
   }
   .infoUMKM {
     grid-template-columns: 1fr;
@@ -282,11 +336,13 @@ dataline-section {
     .info {
       grid-area: info;
       .judul {
+        padding-block: 3.5rem 0;
+        border-bottom: 0px;
         h3 {
           text-align: center;
           font-size: 2rem;
           span {
-            font-size: 2.5rem;
+            font-size: 2rem;
           }
         }
       }
@@ -295,12 +351,144 @@ dataline-section {
         p {
           font-size: 0.9rem;
           line-height: 1.5rem;
-          text-align: center;
+          text-align: start;
         }
       }
 
       .btnInfo {
+        a {
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  #infoUmkmCon {
+    padding-inline: 0;
+    padding-block: 2rem 4rem;
+  }
+  .infoUMKM {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "slider";
+
+    #umkm-list {
+      grid-area: slider;
+    }
+
+    .info {
+      grid-area: info;
+      .judul {
+        padding-block: 3.5rem 0;
+        border-bottom: 0px;
+        h3 {
+          text-align: center;
+          font-size: 2rem;
+          span {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .infoDesc {
+        p {
+          font-size: 0.9rem;
+          line-height: 1.5rem;
+          text-align: start;
+        }
+      }
+
+      .btnInfo {
+        a {
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  dataline-section {
+    padding: 4rem 8%;
+  }
+
+  .dataline {
+    max-width: 300px;
+    display: flex;
+
+    p {
+      color: black;
+      font-family: $font-default;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  .category-line {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .category-list {
+      width: 100%;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .category-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
         justify-content: center;
+        flex: 1;
+
+        article {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          picture {
+            i {
+              font-size: 1.25rem;
+              color: $icon;
+            }
+          }
+          h4 {
+            font-size: 0.9rem;
+          }
+        }
+
+        &.umkm {
+          article {
+            picture {
+              i {
+                color: $red;
+              }
+            }
+          }
+        }
+      }
+
+      .category-sub {
+        padding: 1rem 0.75rem;
+
+        &.right {
+          border-left: 2px solid $black;
+        }
+        &.left {
+          border-right: 2px solid $black;
+        }
+
+        h3 {
+          color: $black;
+          font-size: 1.25rem;
+        }
       }
     }
   }
