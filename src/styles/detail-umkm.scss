@@ -365,7 +365,7 @@ umkm-freedetail {
     position: relative;
 
     div {
-      background-color: #073d19;
+      background-color: #072526;
       width: 100%;
       height: auto;
       display: flex;
@@ -375,7 +375,7 @@ umkm-freedetail {
       box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 
       p {
-        color: black;
+        color: rgb(255, 255, 255);
         font-size: 0.85rem;
         line-height: 1.5rem;
       }
@@ -404,8 +404,8 @@ umkm-freedetail {
       div {
         position: absolute;
         width: 114%;
-        left: -15%;
-        top: -1rem;
+        right: 30%;
+        top: 4rem;
         padding: 1rem 2rem 3rem;
       }
     }
