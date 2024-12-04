@@ -21,7 +21,9 @@ $green: #36b372;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
+  position: relative;
+  margin-top: -75px;
+  padding: 10rem 8%;
 
   h2 {
     font-size: 2rem;
