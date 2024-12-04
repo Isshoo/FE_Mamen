@@ -291,14 +291,20 @@ umkm-freedetail {
         input {
           width: 100%;
           padding: 0.5rem 1rem;
+          border-radius: 5px;
           max-width: 10rem;
-          border: 1px solid black;
-        }
+          border: 1px solid #DF3838;
+          -webkit-border-radius: 5px 0 0 5;
+          -moz-border-radius: 5px 0 0 5;
+          -ms-border-radius: 5px 0 0 5;
+          -o-border-radius: 5px 0 0 5;
+}
         button {
           padding: 0.5rem 1rem;
           background-color: white;
           color: black;
           cursor: pointer;
+          border-radius: 5px;
           border: 1px solid black;
 
           &:hover {
@@ -321,6 +327,7 @@ umkm-freedetail {
         gap: 0.5rem;
         background-color: $red;
         color: white;
+        border-radius: 5px;
         padding: 0.5rem 1rem;
         transition: all ease-in-out 0.5s;
 
@@ -358,7 +365,7 @@ umkm-freedetail {
     position: relative;
 
     div {
-      background-color: white;
+      background-color: #073d19;
       width: 100%;
       height: auto;
       display: flex;
