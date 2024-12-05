@@ -9,7 +9,7 @@ $green: #36b372;
 
 .product-home-con {
   width: 100%;
-  padding: 2rem 8%;
+  padding: 2rem 8% 3rem;
   position: relative;
   overflow: hidden;
 
@@ -73,7 +73,6 @@ $green: #36b372;
 }
 
 .exploreProd {
-  padding-block: 72.58px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,36 +82,34 @@ $green: #36b372;
 .judul-list-prod {
   width: 100%;
   background-color: $dark;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 10rem 8%;
+  flex-direction: column;
+  gap: 1rem;
 
   h2 {
     font-size: 2rem;
     color: white;
-    text-align: center;
-    font-weight: 300;
+    text-align: left;
+    font-weight: 500;
   }
-}
 
-.quote-prod-list {
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding-block: 2rem;
-
-  p {
+  p{
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    font-size: 1rem;
+    font-size: 13px;
     text-align: center;
     font-weight: 400;
     line-height: 1.5;
+    color: $yellow;
+    gap: 1rem;
   }
 }
+
 
 .page-list-prod {
   padding: 0 8%;
@@ -121,10 +118,11 @@ $green: #36b372;
 .list-product {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.75rem;
+  gap: 2rem;
 }
 
 .product-card {
+  margin-top: 1px;
   position: relative;
   padding: 0.5rem;
   display: flex;
@@ -134,7 +132,7 @@ $green: #36b372;
   align-items: center;
   transition: transform 0.5s ease-in-out;
   height: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.401);
 
   .product-img {
     box-sizing: border-box;
@@ -282,10 +280,18 @@ $green: #36b372;
         i {
           color: white;
           font-size: 0.8rem;
+
         }
 
-        &:hover {
-          background-color: $yellow;
+        &.deleteProdBtn {
+          &:hover {
+            background-color: $red;
+          }
+        }
+        &.editProdBtn {
+          &:hover {
+            background-color: $yellow;
+          }
         }
       }
     }
@@ -310,17 +316,33 @@ $green: #36b372;
   }
 }
 
+.detailsection-produk {
+  padding: 3rem 8%;
+  width: 100%;
+  position: relative;
+
+  .white-filter {
+    background-color: #174c4ea3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
 .list-products {
-  padding-block: 3rem 1rem;
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-
   width: 100%;
+  min-height: 472px;
+  padding-inline: 10px;
 
   .product-card {
     min-width: 250px;
     max-width: 250px;
+    height: 440px;
   }
 }
 
@@ -331,6 +353,7 @@ $green: #36b372;
   width: 100%;
   padding: 1rem;
   z-index: 10;
+  min-height: 472px;
 
   .product-card {
     min-width: 250px;
@@ -348,6 +371,7 @@ $green: #36b372;
 //responsive
 @media screen and (max-width: 768px) {
   .product-home-con {
+    padding: 2rem 8% 2rem;
     .homeProdTitle {
       display: flex;
       justify-content: center;

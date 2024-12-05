@@ -47,12 +47,12 @@ class UmkmFreeDetail extends HTMLElement {
         <span><i class="fa-regular fa-star"></i> ${this.umkm.rating}</span>
         
       </section>
-      <section class="infoSection">
-        <div class="title-con">
-          <h1 id="title-umkm">${this.umkm.name}</h1>
+      <section class="infoSection free">
+        <div class="title-con free">
+          <h1 id="title-umkm free">${this.umkm.name}</h1>
           
         </div>
-        <div class="detail-con">
+        <div class="detail-con free">
           <table>
           <tr>
             <td>Alamat</td>
@@ -76,21 +76,21 @@ class UmkmFreeDetail extends HTMLElement {
           </tr>
         </table>
         </div>
-        <div class="category-con">
+        <div class="category-con free">
           <div>
             <p>Kategori :</p>
             
           </div>
-          <div id="listCategory">
-          <div class="category" style="background-color: transparent">
+          <div id="listCategory" class="listCategoryFree">
+          <div class="category free" style="background-color: transparent">
             <p style="color: transparent">tes</p>
           </div>
           </div>
         </div>
-        <div class="description-con">
+        <div class="description-con free">
           <div>
             <p>Deskripsi :</p>
-            <p id="deskripsi">${this.umkm.description}</p>
+            <p id="deskripsi" class="deskripsiFree">${this.umkm.description}</p>
           </div>
           <p></p>
         </div>

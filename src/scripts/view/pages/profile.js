@@ -88,7 +88,10 @@ const Profile = {
             <h2>Products</h2>
             <button id="new-product">Tambah Produk</button>
           </div>
-          <div id="products" class="list-products"></div>
+          <div class="detailsection-produk">
+            <div id="products" class="list-products">
+            </div>
+          </div>
           <div>
             <div class="separator"></div>
           </div>
@@ -118,7 +121,7 @@ const Profile = {
       container.innerHTML = `
           <div class="blank-profile">
 
-          <img class="blankImg" src="./images/newumkm.png">
+          <img class="blankImg" src="./images/newumkm.webp">
           <div class="blankCon">
             <h2>Nothing in here...</h2>
             <p>Kamu belum mempunyai UMKM. Silahkan menambah UMKM terlebih dahulu.</p>

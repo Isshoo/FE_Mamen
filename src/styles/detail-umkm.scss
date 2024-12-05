@@ -20,9 +20,10 @@ $green: #36b372;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0 8%;
   h2 {
     font-size: 2rem;
-    color: $yellow;
+    color: $dark;
     text-align: center;
   }
   button {
@@ -31,9 +32,12 @@ $green: #36b372;
     align-self: flex-end;
     font-size: 1rem;
     cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
 
-    background-color: rgb(255, 255, 255);
-    color: black;
+
+    background-color: white;
+    color: $dark;
     padding: 0.5rem 1rem;
     border: 1px solid black;
     box-shadow: -2px 2px 5px black;
@@ -42,7 +46,7 @@ $green: #36b372;
       transform 0.4s;
 
     &:hover {
-      background-color: blue;
+      background-color: $dark;
       transform: translateY(-0.25rem);
       color: white;
     }
@@ -55,14 +59,13 @@ $green: #36b372;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 0 8%;
 
   #umkmDetail,
   #productDetail {
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-top: 6.5rem;
+    padding-top: 72.58px;
     overflow: hidden;
 
     #umkms {
@@ -71,7 +74,37 @@ $green: #36b372;
       align-items: center;
       justify-content: center;
       width: 100%;
+      padding: 3rem 8%;
+      position: relative;
+      z-index: 10;
     }
+  }
+}
+
+.herodetail-umkm {
+  background-image: url(../public/images/hero-image.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .white-filter {
+    background-color: #174c4ea3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(0deg, white 50%, rgba(255, 255, 255, 0) 90%);
   }
 }
 
@@ -182,21 +215,39 @@ umkm-freedetail {
 .infoSection {
   flex: 6;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-direction: column;
 
   .title-con {
     display: flex;
     flex-direction: column-reverse;
     gap: 1.25rem;
-    margin-top: 1rem;
+
+    &.free {
+      h1 {
+        color: white;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -3px;
+          left: 50%;
+          width: 30%;
+          height: 2px;
+          background-color: $red;
+          transform: translateX(-50%);
+        }
+      }
+    }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 500;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $dark;
       flex: 1;
       text-align: center;
     }
+
     .umkm-buttons {
       display: flex;
       gap: 0.5rem;
@@ -209,15 +260,23 @@ umkm-freedetail {
         border: 1px solid black;
         border-radius: 5px;
         cursor: pointer;
+        border-radius: 5px;
         box-shadow: -2px 2px 5px black;
         transition:
           color 0.4s,
           transform 0.4s;
 
+        i {
+          color: $yellow;
+          font-weight: 700;
+        }
+
         &:hover {
           background-color: rgba(255, 217, 0, 0.615);
           transform: translateY(-0.25rem);
-          color: white;
+          i {
+            color: black;
+          }
         }
       }
 
@@ -228,15 +287,23 @@ umkm-freedetail {
         border: 1px solid black;
         border-radius: 5px;
         cursor: pointer;
+        border-radius: 5px;
         box-shadow: -2px 2px 5px black;
         transition:
           color 0.4s,
           transform 0.4s;
 
+        i {
+          color: $red;
+          font-weight: 700;
+        }
+
         &:hover {
           background-color: rgba(255, 0, 0, 0.819);
           transform: translateY(-0.25rem);
-          color: white;
+          i {
+            color: black;
+          }
         }
       }
     }
@@ -246,8 +313,30 @@ umkm-freedetail {
     table {
       tr {
         td {
-          padding: 0.5rem;
+          vertical-align: top;
+          padding: 0.5rem 0.5rem 0.5rem 0;
           font-size: 1rem;
+
+          &:nth-child(1) {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &.free {
+      table {
+        tr {
+          td {
+            color: white;
+            vertical-align: top;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 1rem;
+
+            &:nth-child(1) {
+              font-weight: 700;
+            }
+          }
         }
       }
     }
@@ -258,28 +347,35 @@ umkm-freedetail {
     gap: 1rem;
     flex-direction: column;
 
+    &.free {
+      div p {
+        color: white;
+      }
+    }
+
     div {
       display: flex;
       justify-content: space-between;
       align-items: center;
       p {
         font-size: 1rem;
+        font-weight: 700;
       }
       #addCategory {
         background-color: white;
-        color: black;
+        color: rgba(0, 0, 255, 0.955);
         padding: 0.5rem 1rem;
-        border-radius: 5px;
+        font-weight: 600;
         border: 1px solid black;
         cursor: pointer;
         box-shadow: -2px 2px 5px black;
+        border-radius: 5px;
         transition:
           color 0.4s,
           transform 0.4s;
 
         &:hover {
           background-color: rgba(0, 0, 255, 0.955);
-          transform: translateY(-0.25rem);
           color: white;
         }
       }
@@ -291,10 +387,9 @@ umkm-freedetail {
         input {
           width: 100%;
           padding: 0.5rem 1rem;
-          border-radius: 5px;
-          max-width: 10rem;
-          border: 1px solid #DF3838;
-}
+          max-width: 7rem;
+          border: 1px solid black;
+        }
         button {
           padding: 0.5rem 1rem;
           background-color: white;
@@ -302,6 +397,7 @@ umkm-freedetail {
           cursor: pointer;
           border-radius: 5px;
           border: 1px solid black;
+          font-weight: 700;
 
           &:hover {
             background-color: rgba(0, 0, 255, 0.955);
@@ -309,6 +405,10 @@ umkm-freedetail {
           }
         }
       }
+    }
+
+    .listCategoryFree {
+      color: white;
     }
 
     #listCategory {
@@ -323,12 +423,13 @@ umkm-freedetail {
         gap: 0.5rem;
         background-color: $red;
         color: white;
-        border-radius: 5px;
-        padding: 0.5rem 1rem;
+        padding: 0.4rem 1rem;
         transition: all ease-in-out 0.5s;
+        border-radius: 5px;
 
         p {
           color: white;
+          font-weight: 500;
         }
 
         .delete-category {
@@ -339,6 +440,9 @@ umkm-freedetail {
           i {
             color: white;
             margin-left: 0.25rem;
+            &:hover {
+              color: $yellow;
+            }
           }
         }
 
@@ -360,20 +464,37 @@ umkm-freedetail {
   .description-con {
     position: relative;
 
+    &.free {
+      div {
+        background-color: white;
+      }
+      div p {
+        color: $yellow;
+      }
+      div .deskripsiFree {
+        color: black;
+      }
+    }
+
     div {
-      background-color: #072526;
+      background-color: $dark;
       width: 100%;
       height: auto;
       display: flex;
       gap: 1rem;
       flex-direction: column;
-      padding: 1rem 1rem;
-      box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+      padding: 1rem 1rem 2rem;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
 
       p {
-        color: rgb(255, 255, 255);
-        font-size: 0.85rem;
+        color: white;
+        font-size: 1rem;
         line-height: 1.5rem;
+        font-weight: 700;
+        &#deskripsi {
+          font-weight: 500;
+        }
       }
     }
   }
@@ -388,6 +509,14 @@ umkm-freedetail {
     }
   }
 
+  .imgSection {
+    picture {
+      img {
+        box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
   .infoSection {
     gap: 2rem;
     .title-con {
@@ -395,13 +524,38 @@ umkm-freedetail {
       flex-direction: row;
     }
 
+    .detail-con,
+    .detail-con.free {
+      table {
+        tr {
+          td {
+            vertical-align: top;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+
+            &:nth-child(1) {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+
+    .category-con {
+      margin-left: 1rem;
+      #listCategory {
+        margin-left: 1rem;
+      }
+    }
+
     .description-con {
       padding: 2rem;
       div {
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         position: absolute;
         width: 114%;
-        right: 30%;
-        top: 4rem;
+        left: -30%;
+        top: 0.25rem;
         padding: 1rem 2rem 3rem;
       }
     }

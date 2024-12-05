@@ -10,7 +10,7 @@ const Login = {
     <section class="login-section act">
         <!-- Left side: Image -->
         <div class="login-image">
-          <img src="./images/login-image.jpeg" alt="Login Image">
+          <img src="./images/login-image.webp" alt="Login Image">
         </div>
 
         <!-- Right side: Form Container -->
@@ -20,7 +20,7 @@ const Login = {
             <form id="loginForm" class="form act">
               <div class="img">
                 <a href="/">
-                  <img src="./images/LogoMamen.png" alt="Logo Mamen">
+                  <img src="./images/LogoMamen.webp" alt="Logo Mamen">
                 </a>
               </div>
               <div class="form-body">
@@ -49,7 +49,7 @@ const Login = {
             <form id="registerForm" class="form">
             <div class="img">
                 <a href="/">
-                  <img src="./images/LogoMamen.png" alt="Logo Mamen">
+                  <img src="./images/LogoMamen.webp" alt="Logo Mamen">
                 </a>
               </div>
               <div class="form-body">

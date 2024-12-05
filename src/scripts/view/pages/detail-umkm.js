@@ -69,15 +69,20 @@ const DetailUmkm = {
     return `
     <section id="detailContainer">
       <div id="umkmDetail">
-        <div id="umkms" class="umkms">
+      <div class="herodetail-umkm">
+        <div class="white-filter"></div>
+        <div id="umkms" class="umkms umum">
         </div>
+      </div>
         <div>
           <div class="separator"></div>
         </div>
         <div class="section-title">
             <h2>Products</h2>
           </div>
-        <div id="products" class="list-products scroll">
+        <div class="detailsection-produk">
+          <div id="products" class="list-products">
+          </div>
         </div>
         <div>
           <div class="separator"></div>

@@ -64,7 +64,7 @@ const Home = {
             <h2>Maybe You Would Like </h2>
           </div>
           <div id="products" class="scroll"></div>
-          <span class="link-to-products"><a>See All Products</a></span>
+          <span class="link-to-products"><a href="#/products">See All Products</a></span>
         </section>
         <section class="explore-con home-review">
           <div class="title-review-con">
@@ -97,15 +97,32 @@ const Home = {
     // RENDER PRODUCTS
     const productContainer = document.querySelector('#products');
     productContainer.innerHTML = '';
+
     const allProductList = await ProductsDbSource.getProducts();
 
-    if (allProductList.length === 0) {
+    if (!allProductList || allProductList.length === 0) {
       productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
     } else {
+      // Membuat objek untuk menyaring satu produk per `umkm_id`
+      const uniqueProducts = {};
       allProductList.forEach((product) => {
-        productContainer.innerHTML += createFreeProductItemTemplate(product);
+        if (!uniqueProducts[product.umkms_id]) {
+          uniqueProducts[product.umkms_id] = product;
+        }
       });
+
+      // Mengubah objek menjadi array untuk dirender
+      const filteredProductList = Object.values(uniqueProducts);
+
+      if (filteredProductList.length === 0) {
+        productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
+      } else {
+        filteredProductList.forEach((product) => {
+          productContainer.innerHTML += createFreeProductItemTemplate(product);
+        });
+      }
     }
+
     homeProdukGsapJs();
 
     // --------------------------------------------
