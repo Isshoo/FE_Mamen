@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import AuthDbSource from '../../api/auth-api';
 import UsersDbSource from '../../api/users-api';
 import Loading from '../../utility/loading';
@@ -6,7 +7,7 @@ const Login = {
   async render() {
     return `
     <div class="login">
-    <section class="login-section">
+    <section class="login-section act">
         <!-- Left side: Image -->
         <div class="login-image">
           <img src="./images/login-image.jpeg" alt="Login Image">
@@ -14,10 +15,6 @@ const Login = {
 
         <!-- Right side: Form Container -->
         <div class="form-container">
-            <div class="toggle-buttons">
-                <button id="registerBtn">Daftar</button>
-                <button id="loginBtn" class="act">Login</button>
-            </div>
 
             <!-- Login Form -->
             <form id="loginForm" class="form act">
@@ -26,23 +23,36 @@ const Login = {
                   <img src="./images/LogoMamen.png" alt="Logo Mamen">
                 </a>
               </div>
-              <div>
+              <div class="form-body">
                 <h2>Login</h2>
                 <div>
                   <label for="email">Username</label>
                   <input type="text" id="email" name="email" required>
                 </div>
                 <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
+                  <label for="password">Password</label>
+                  <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <button type="submit">Login</button>
+              <div class="form-buttons">
+                <button type="submit">Login</button>
+                <P>Belum punya akun? Daftar <span id="registerBtn">disini</span></P>
+              </div>
             </form>
 
             <!-- Register Form -->
             <form id="registerForm" class="form">
-              <div>
+            <div class="img">
+                <a href="/">
+                  <img src="./images/LogoMamen.png" alt="Logo Mamen">
+                </a>
+              </div>
+              <div class="form-body">
                 <h2>Daftar</h2>
                 <div>
                   <label for="reg-email">Username</label>
@@ -50,14 +60,22 @@ const Login = {
                 </div>
                 <div>
                   <label for="reg-password">Password</label>
-                  <input type="password" id="reg-password" name="password" required>
+                  <div class="password-container">
+                    <input type="password" id="reg-password" name="reg-password" required>
+                    <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                      <i class="fa-regular fa-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div>
                   <label for="fullname">Fullname</label>
                   <input type="text" id="fullname" name="fullname" required>
                 </div>
               </div>
-              <button type="submit">Daftar</button>
+              <div class="form-buttons">
+                <button type="submit">Daftar</button>
+                <P>Sudah punya akun? Login <span id="loginBtn">disini</span></P>
+              </div>
             </form>
         </div>
     </section>
@@ -81,6 +99,7 @@ const Login = {
       document.getElementById('registerForm').classList.remove('act');
       document.getElementById('loginBtn').classList.add('act');
       document.getElementById('registerBtn').classList.remove('act');
+      document.querySelector('.login-section').classList.add('act');
     }
 
     function showRegister() {
@@ -88,11 +107,25 @@ const Login = {
       document.getElementById('loginForm').classList.remove('act');
       document.getElementById('registerBtn').classList.add('act');
       document.getElementById('loginBtn').classList.remove('act');
+      document.querySelector('.login-section').classList.remove('act');
     }
 
     document.getElementById('loginBtn').addEventListener('click', showLogin);
     document.getElementById('registerBtn').addEventListener('click', showRegister);
     // --------------------------------------------
+
+    document.querySelectorAll('.toggle-password').forEach((toggleButton) => {
+      toggleButton.addEventListener('click', (event) => {
+        const passwordInput = event.target.closest('.password-container').querySelector('input');
+        const isPasswordVisible = passwordInput.type === 'text';
+
+        passwordInput.type = isPasswordVisible ? 'password' : 'text';
+
+        // Ubah ikon tombol mata (opsional)
+        toggleButton.innerHTML = '';
+        toggleButton.innerHTML = isPasswordVisible ? '<i class="fa-regular fa-eye"></i>' : '<i class="fa-regular fa-eye-slash"></i>';
+      });
+    });
 
     // login form
     document.getElementById('loginForm').addEventListener('submit', async (e) => {

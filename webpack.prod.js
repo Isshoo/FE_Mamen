@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -27,6 +28,7 @@ module.exports = merge(common, {
     ],
   },
   optimization: {
+    minimize: true,
     minimizer: [
       '...',
       new CssMinimizerPlugin(),
@@ -55,6 +57,18 @@ module.exports = merge(common, {
     },
   },
   plugins: [
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 90,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
+
     new CompressionPlugin({
       algorithm: 'gzip',
     }),

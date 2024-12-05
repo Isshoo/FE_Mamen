@@ -14,7 +14,7 @@ $font-default: "Oxygen";
 
 headline-section {
   width: 100%;
-  padding: 3rem 8% 5rem;
+  padding: 3rem 8% 8rem;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -24,7 +24,7 @@ headline-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
+    gap: 4rem;
 
     h2 {
       font-family: $font-default;
@@ -32,6 +32,20 @@ headline-section {
       font-weight: 700;
       text-align: center;
       width: 100%;
+      color: $black;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 70px;
+        height: 4px;
+        background-color: $red;
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+      }
     }
 
     div {
@@ -42,6 +56,25 @@ headline-section {
       justify-content: space-evenly;
       flex-wrap: wrap;
 
+      article.middle-art {
+        background-color: $black;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: -5px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        h3,
+        p {
+          color: white;
+        }
+        picture {
+          i {
+            color: $icon;
+          }
+        }
+      }
       article {
         display: flex;
         flex-direction: column;
@@ -55,6 +88,13 @@ headline-section {
         border-radius: 16px;
         background-color: white;
         box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: -5px 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
         picture {
           i {
@@ -80,16 +120,29 @@ headline-section {
 }
 
 #infoUmkmCon {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  padding-block: 4rem;
   position: relative;
+  background-image: url(../public/images/hero-image.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-block: 8rem;
   display: flex;
   align-items: center;
+  .green-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #072526d1;
+    z-index: 1;
+  }
 }
 .infoUMKM {
+  z-index: 2;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 3rem;
   padding-inline: 8%;
 
@@ -99,16 +152,16 @@ headline-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    justify-content: center;
 
     .judul {
-      padding-block: 1rem;
+      padding-block: 3rem 1rem;
+      border-bottom: 1px solid white;
       h3 {
-        text-align: center;
-        font-size: 2.5rem;
+        text-align: start;
+        font-size: 2rem;
+        color: white;
         span {
-          font-family: $info-home;
-          font-size: 5rem;
+          font-size: 2rem;
           color: $yellow;
         }
       }
@@ -117,9 +170,10 @@ headline-section {
     .infoDesc {
       p {
         font-family: $font-default;
-        font-size: 1rem;
+        font-size: 1.25rem;
         line-height: 2rem;
-        text-align: center;
+        text-align: start;
+        color: white;
       }
     }
 
@@ -128,10 +182,10 @@ headline-section {
       display: flex;
       align-items: center;
       width: 100%;
-      justify-content: center;
+      justify-content: end;
 
       a {
-        font-size: 0.75rem;
+        font-size: 1rem;
         width: auto;
         padding: 0.75rem 1.25rem;
         background-color: $button;
@@ -151,49 +205,91 @@ dataline-section {
   justify-items: center;
 
   position: relative;
-  background-image: url(../public/images/hero-image.jpeg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  .green-filter {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #072526d1;
-    z-index: -1;
-  }
 
   #datalineCon {
     z-index: 10;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+.dataline {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
 
-    .dataline {
-      width: 100%;
-      max-width: 520px;
+  p {
+    color: black;
+    font-family: $font-default;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+  }
+}
+
+.category-line {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .category-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    .category-icons {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 2rem;
-      flex-direction: column;
+      align-items: center;
 
-      p {
-        color: white;
-        font-family: $font-default;
-        font-size: 2rem;
-        line-height: 2.5rem;
-        text-align: center;
+      article {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        picture {
+          i {
+            font-size: 1.5rem;
+            color: $icon;
+          }
+        }
       }
 
-      button {
-        font-size: 1rem;
-        padding: 0.75rem 1.25rem;
-        background-color: $yellow;
-        color: white;
+      &.umkm {
+        article {
+          picture {
+            i {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+
+    .category-sub {
+      padding: 1rem 1.5rem;
+
+      &.right {
+        border-left: 2px solid $black;
+      }
+      &.left {
+        border-right: 2px solid $black;
+      }
+
+      h3 {
+        color: $black;
+        font-size: 1.25rem;
       }
     }
   }
@@ -204,12 +300,10 @@ dataline-section {
   .infoUMKM {
     .info {
       .judul {
-        padding-block: 0;
         h3 {
-          text-align: center;
-          font-size: 2rem;
+          font-size: 1.75rem;
           span {
-            font-size: 2rem;
+            font-size: 1.75rem;
           }
         }
       }
@@ -227,6 +321,7 @@ dataline-section {
 @media screen and (max-width: 768px) {
   #infoUmkmCon {
     padding-inline: 0;
+    padding-block: 2rem 4rem;
   }
   .infoUMKM {
     grid-template-columns: 1fr;
@@ -241,11 +336,13 @@ dataline-section {
     .info {
       grid-area: info;
       .judul {
+        padding-block: 3.5rem 0;
+        border-bottom: 0px;
         h3 {
           text-align: center;
           font-size: 2rem;
           span {
-            font-size: 2.5rem;
+            font-size: 2rem;
           }
         }
       }
@@ -254,12 +351,144 @@ dataline-section {
         p {
           font-size: 0.9rem;
           line-height: 1.5rem;
-          text-align: center;
+          text-align: start;
         }
       }
 
       .btnInfo {
+        a {
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 540px) {
+  #infoUmkmCon {
+    padding-inline: 0;
+    padding-block: 2rem 4rem;
+  }
+  .infoUMKM {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "slider";
+
+    #umkm-list {
+      grid-area: slider;
+    }
+
+    .info {
+      grid-area: info;
+      .judul {
+        padding-block: 3.5rem 0;
+        border-bottom: 0px;
+        h3 {
+          text-align: center;
+          font-size: 2rem;
+          span {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      .infoDesc {
+        p {
+          font-size: 0.9rem;
+          line-height: 1.5rem;
+          text-align: start;
+        }
+      }
+
+      .btnInfo {
+        a {
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  dataline-section {
+    padding: 4rem 7%;
+  }
+
+  .dataline {
+    max-width: 300px;
+    display: flex;
+
+    p {
+      color: black;
+      font-family: $font-default;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  .category-line {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .category-list {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .category-icons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
         justify-content: center;
+        flex: 1;
+
+        article {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          picture {
+            i {
+              font-size: 1.5rem;
+              color: $icon;
+            }
+          }
+          h4 {
+            font-size: 1rem;
+          }
+        }
+
+        &.umkm {
+          article {
+            picture {
+              i {
+                color: $red;
+              }
+            }
+          }
+        }
+      }
+
+      .category-sub {
+        padding: 1rem 0.75rem;
+
+        &.right {
+          border-left: 2px solid $black;
+        }
+        &.left {
+          border-right: 2px solid $black;
+        }
+
+        h3 {
+          color: $black;
+          font-size: 1.25rem;
+        }
       }
     }
   }

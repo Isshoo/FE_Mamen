@@ -1,5 +1,11 @@
-$yellow: #ff9e1b;
-$red: #da281c;
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+$green: #36b372;
 
 .separator {
   width: 100%;
@@ -16,19 +22,30 @@ $red: #da281c;
   gap: 1rem;
   h2 {
     font-size: 2rem;
-    color: black;
+    color: $yellow;
     text-align: center;
   }
   button {
     width: 100%;
     display: inline-block;
     align-self: flex-end;
-    padding: 0.75rem 1rem;
-    background-color: black;
-    border-radius: 0.5rem;
-    color: white;
     font-size: 1rem;
     cursor: pointer;
+
+    background-color: white;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: 1px solid black;
+    box-shadow: -2px 2px 5px black;
+    transition:
+      color 0.4s,
+      transform 0.4s;
+
+    &:hover {
+      background-color: blue;
+      transform: translateY(-0.25rem);
+      color: white;
+    }
   }
 }
 
@@ -38,7 +55,6 @@ $red: #da281c;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  padding: 0 8%;
 
   #umkmDetail,
   #productDetail {
@@ -54,6 +70,7 @@ $red: #da281c;
       align-items: center;
       justify-content: center;
       width: 100%;
+      padding: 0 8%;
     }
   }
 }
@@ -165,18 +182,18 @@ umkm-freedetail {
 .infoSection {
   flex: 6;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
   flex-direction: column;
 
   .title-con {
     display: flex;
     flex-direction: column-reverse;
     gap: 1.25rem;
-    margin-top: 1rem;
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 500;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $dark;
       flex: 1;
       text-align: center;
     }
@@ -227,8 +244,13 @@ umkm-freedetail {
     table {
       tr {
         td {
-          padding: 0.5rem;
+          vertical-align: top;
+          padding: 0.5rem 0.5rem 0.5rem 0;
           font-size: 1rem;
+
+          &:nth-child(1) {
+            font-weight: 700;
+          }
         }
       }
     }
@@ -245,11 +267,13 @@ umkm-freedetail {
       align-items: center;
       p {
         font-size: 1rem;
+        font-weight: 700;
       }
       #addCategory {
         background-color: white;
         color: black;
         padding: 0.5rem 1rem;
+        font-weight: 600;
         border: 1px solid black;
         cursor: pointer;
         box-shadow: -2px 2px 5px black;
@@ -259,7 +283,6 @@ umkm-freedetail {
 
         &:hover {
           background-color: rgba(0, 0, 255, 0.955);
-          transform: translateY(-0.25rem);
           color: white;
         }
       }
@@ -345,7 +368,7 @@ umkm-freedetail {
       gap: 1rem;
       flex-direction: column;
       padding: 1rem 1rem;
-      box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+      box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
 
       p {
         color: black;

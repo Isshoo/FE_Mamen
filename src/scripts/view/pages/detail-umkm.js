@@ -77,7 +77,7 @@ const DetailUmkm = {
         <div class="section-title">
             <h2>Products</h2>
           </div>
-        <div id="products" class="list-products scroll">
+        <div id="products" class="list-products">
         </div>
         <div>
           <div class="separator"></div>
@@ -86,8 +86,11 @@ const DetailUmkm = {
             <h2>Reviews</h2>
         </div>
         <div class="section-review">
-          <form-review></form-review>
-          <div id="reviews" class="detailumkm-reviews">
+          <div class="white-filter"></div>
+          <div class="isiReview">
+            <form-review></form-review>
+            <div id="reviews" class="detailumkm-reviews">
+          </div>
         </div>
       </div>
       <div>
@@ -111,7 +114,7 @@ const DetailUmkm = {
     // RENDER UMKM DETAILS
     await renderUmkm(umkmById);
     // RENDER CATEGORIES BY UMKM
-    await renderCategories(url.id);
+    renderCategories(url.id);
     DetailUmkmGsapJs();
     // RENDER PRODUCTS BY UMKM
     await renderProducts(url.id);

@@ -19,8 +19,13 @@ class UsersDbSource {
       const responseJson = await response.json();
 
       Swal.fire({
-        title: `${responseJson.status}`,
-        text: `${responseJson.message}`,
+        icon: 'success',
+        title: `${responseJson.message}`,
+        text: 'Silahkan melakukan login',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
 
       return responseJson.data;

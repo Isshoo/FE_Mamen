@@ -13,7 +13,7 @@ const createUmkmSliderTemplate = (umkm) => `
                 <h2>${umkm.name}</h2>
                 <div class="sub"><p class="subs">${umkm.subdistrict}</p></div>
                 <div class="cate">${umkm.categories && umkm.categories.length > 0
-    ? umkm.categories.map((category) => `<p>${category}</p>`).join('')
+    ? umkm.categories.map((category) => `<p class="cate-item">${category}</p>`).join('')
     : '-'}</div>
               </div>
             </div>
@@ -136,7 +136,8 @@ const createReviewItemTemplate = (review) => `
                 <p>${review.name}</p>
               </div>
               <div class="review-rating">
-                <h4><i>&#9734;</i>${review.user_rating}</h4>
+                <i class="fa-solid fa-star"></i>
+                <h4>${review.user_rating}</h4>
               </div>
             </div>
             <div class="review-des">
@@ -156,7 +157,8 @@ const createHomeReviewItemTemplate = (review) => `
                 <p>${review.name}</p>
               </div>
               <div class="review-rating">
-                <h4><i>&#9734;</i>${review.user_rating}</h4>
+                <i class="fa-solid fa-star"></i>
+                <h4>${review.user_rating}</h4>
               </div>
             </div>
             <div class="review-des">

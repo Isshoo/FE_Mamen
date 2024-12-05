@@ -1,6 +1,5 @@
 import ProductsDbSource from '../../api/products-api';
 import ReviewsDbSource from '../../api/reviews-api';
-// import footerGsapJs from '../../utility/animation/home-page/footer-gsap';
 import homeGsapJs from '../../utility/animation/home-page/home-gsap';
 import homeProdukGsapJs from '../../utility/animation/home-page/home-produk-gsap';
 import homeReviewGsapJs from '../../utility/animation/home-page/home-review-gsap';
@@ -30,10 +29,14 @@ const Home = {
       </section>
       <headline-section></headline-section>
         <section id="infoUmkmCon">
+        <div class="green-filter"></div>
           <div class="infoUMKM">
+          <div id="umkm-list">
+                <umkm-slider></umkm-slider>
+            </div>
             <div class="info">
               <div class="judul">
-                <h3><span>Ayo</span> cari tahu</h3>
+                <h3><span>Mengenal</span> Lebih Banyak Tentang UMKM</h3>
               </div>
               <div class="infoDesc">
                 <p>
@@ -41,23 +44,41 @@ const Home = {
                   merupakan tulang punggung perekonomian yang memiliki peran penting dalam 
                   mendorong perekonomian lokal, termasuk di Kota Manado.
                 </p>
+                <br>
+                <p>
+                  UMKM di Kota Manado memiliki peran strategis 
+                  dalam menggerakkan perekonomian lokal, terutama melalui 
+                  sektor kuliner, kerajinan tangan, dan pariwisata yang menjadi daya tarik utama wilayah ini.
+                </p>
               </div>
               <div class="btnInfo">
-                <a href="#/umkms">List UMKM</a>
+                <a href="#/umkms">Lihat Semua</a>
               </div>
             </div>
-            <div id="umkm-list">
-                <umkm-slider></umkm-slider>
-              </div>
           </div>
         </section>
         <dataline-section></dataline-section>
         <section class="product-home-con">
+          <div class="green-filter"></div>
+          <div class="homeProdTitle">
+            <h2>Maybe You Would Like </h2>
+          </div>
           <div id="products" class="scroll"></div>
+          <span class="link-to-products"><a href="#/products">See All Products</a></span>
         </section>
-        <section class="explore-con">
-          <h2 class="titleReview">Jejak Pendapat Pelanggan</h2>
-          <div id="reviews" class="infinite-scroll"></div>
+        <section class="explore-con home-review">
+          <div class="title-review-con">
+            <span class="quotes"><i class="fa-solid fa-quote-left"></i></span>
+            <h2 class="titleReview">What Customers Says</h2>
+            <p>Discover the experiences of our customers and their thoughts about our service. Your satisfaction is our top priority!</p>
+          </div>
+          <div class="review-cons">
+            <div class="white-filter"></div>
+            <div id="reviews" class="infinite-scroll"></div>
+          </div>
+          <div class="closing-quotes">
+            <p>Thank you for being part of our journey. Together, let’s create something extraordinary. See you again!</p>
+          </div>
         </section>
     `;
   },
@@ -76,15 +97,32 @@ const Home = {
     // RENDER PRODUCTS
     const productContainer = document.querySelector('#products');
     productContainer.innerHTML = '';
+
     const allProductList = await ProductsDbSource.getProducts();
 
-    if (allProductList.length === 0) {
+    if (!allProductList || allProductList.length === 0) {
       productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
     } else {
+      // Membuat objek untuk menyaring satu produk per `umkm_id`
+      const uniqueProducts = {};
       allProductList.forEach((product) => {
-        productContainer.innerHTML += createFreeProductItemTemplate(product);
+        if (!uniqueProducts[product.umkms_id]) {
+          uniqueProducts[product.umkms_id] = product;
+        }
       });
+
+      // Mengubah objek menjadi array untuk dirender
+      const filteredProductList = Object.values(uniqueProducts);
+
+      if (filteredProductList.length === 0) {
+        productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
+      } else {
+        filteredProductList.forEach((product) => {
+          productContainer.innerHTML += createFreeProductItemTemplate(product);
+        });
+      }
     }
+
     homeProdukGsapJs();
 
     // --------------------------------------------
@@ -102,8 +140,21 @@ const Home = {
       reviewContainer.innerHTML = 'Tidak ada review untuk ditampilkan.';
     }
     // --------------------------------------------
+    const infiniteScroll = document.querySelector('.infinite-scroll');
+    const reviewItems = document.querySelectorAll('.infinite-scroll .review-item');
+    const itemWidth = 300; // Lebar minimum .review-item
+    const gap = 32; // Gap antar item (2rem = 32px)
+
+    // Total panjang kontainer
+    const totalWidth = (itemWidth + gap) * reviewItems.length;
+
+    // Atur lebar kontainer secara dinamis
+    infiniteScroll.style.width = `${totalWidth}px`;
+
+    // Hitung durasi animasi berdasarkan total panjang kontainer
+    const animationDuration = (totalWidth + window.innerWidth) / 100; // Kecepatan 100px per detik
+    infiniteScroll.style.animationDuration = `${animationDuration}s`;
     homeReviewGsapJs();
-    // footerGsapJs();
   },
 };
 

@@ -1,56 +1,74 @@
-$orange: #f5a000;
+/* main color */
+$orange: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #072526;
+
+/* font */
+$info-home: "Arizonia";
+$font-default: "Oxygen";
 
 #aboutSection {
   background-size: cover;
   min-height: 728px;
-  background-color: whitesmoke;
+  background-color: white;
   position: relative;
-
-  
+  width: 100%;
 
   .about-us {
-    min-height: 450px;
+    min-height: 570px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
 
     .about-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    filter: grayscale(80%);
-    height: 100%;
-  }
-  h1 {
-    z-index: 10;
-    font-size: 2.5rem;
-    color: $orange;
-    margin-bottom: 20px;
-  }
-  &::after {
-    content: "";
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      filter: grayscale(50%);
+      height: 100%;
+    }
 
-    position: absolute;
-    display: block;
-    bottom: -2px;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      0deg,
-      whitesmoke 20%,
-      rgba(255, 255, 255, 0) 90%
-    );
-  }
-  
-  }
+    .txtAbout {
+      display: flex;
+      flex-direction: column;
+      padding: 1em 2em;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        z-index: 10;
+        font-size: 3.5rem;
+        color: white;
+        span {
+          font-size: 3.5rem;
+          color: $red;
+        }
+      }
 
+      p {
+        z-index: 10;
+        font-size: 1rem;
+        color: white;
+      }
+    }
+    &::after {
+      content: "";
+
+      position: absolute;
+      display: block;
+      bottom: -2px;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, $black 1%, rgba(255, 255, 255, 0) 99%);
+    }
+  }
 
   .introduction {
     display: flex;
@@ -58,26 +76,28 @@ $orange: #f5a000;
     align-items: center;
     padding: 4rem 8%;
     width: 100%;
+    background-color: $black;
 
     .introduction-content {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      justify-content: space-evenly;
+      gap: 4rem;
       h2 {
-        text-align: center;
-        flex: 1;
-        margin-right: 20px;
-        font-size: 2.5rem;
-        color: #333;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
+        flex: 0.5;
+        font-size: 2.75rem;
+        color: white;
+
+        span {
+          display: inline;
+          color: $orange;
+        }
       }
 
       p {
         flex: 1;
-        font-size: 1rem;
-        color: #666;
+        font-size: 1.25rem;
+        color: white;
         margin: 0;
         line-height: 1.5;
         padding: 10px;
@@ -87,12 +107,12 @@ $orange: #f5a000;
 
   .vision-mission {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 20px;
-    padding: 50px;
+    padding: 4rem 8%;
     flex-direction: row;
     width: 100%;
+    gap: 2rem;
     flex-wrap: wrap;
 
     .vimi-card {
@@ -100,11 +120,17 @@ $orange: #f5a000;
       border: 1px solid #ddd;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      width: 300px;
+      width: 400px;
+      height: 320px;
+      display: flex;
+      flex-direction: column;
+
+      gap: 1rem;
     }
 
     .header {
       height: 10px;
+      width: 100%;
       border-radius: 10px 10px 0 0;
     }
 
@@ -117,64 +143,81 @@ $orange: #f5a000;
     }
 
     .vimi-content {
-      padding: 20px;
+      flex: 1;
+      padding: 1.5rem 3rem 3rem;
       text-align: center;
+      flex-direction: column;
+      gap: 1rem;
+      display: flex;
+      height: 100%;
 
       h2 {
-        margin: 0 0 10px;
         font-size: 1.5rem;
+        color: $black;
       }
 
       p {
-        margin: 0;
-        color: #555;
-        font-size: 1rem;
+        color: black;
+        font-size: 1.1rem;
         line-height: 1.5;
       }
     }
   }
 
   .values {
-    display: grid;
-    grid-template-columns: minmax(250px, 1fr);
-    justify-items: center;
-    gap: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    padding: 4rem 8%;
+    background-color: whitesmoke;
 
     .values-point {
-      justify-items: center;
+      width: 100%;
       display: flex;
-      gap: 50px;
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .values-item {
-      font-size: 20px;
+      text-align: center;
+      font-size: 1.5rem;
       font-weight: bold;
-      color: #333;
-      padding: 10px 20px;
+      color: $black;
+      padding: 2rem 3rem;
       transition:
         background-color 0.3s,
         color 0.3s;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 50px;
+      border-radius: 10px;
+      background-color: white;
 
       &:hover {
         background-color: $orange;
         color: white;
-        border-radius: 50px;
       }
     }
   }
 
   .services {
-    text-align: center;
-    padding: 50px;
     width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
 
     &-title {
-      margin-bottom: 20px;
-      font-size: 1.8rem;
+      font-size: 3rem;
       color: $orange;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      text-shadow: -2px 2px 4px black;
     }
 
     &-container {
@@ -182,7 +225,7 @@ $orange: #f5a000;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       width: 100%;
-      height: 500px;
+      height: 600px;
       margin: 0 auto;
     }
 
@@ -190,15 +233,24 @@ $orange: #f5a000;
       position: relative;
       width: 100%;
       height: 100%;
-      overflow: hidden;
 
       .service-image {
+        position: absolute;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        position: relative;
         top: 0;
         left: 0;
+        z-index: 1;
+      }
+      .filter-green {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #07252678;
+        z-index: 2;
       }
 
       .service-overlay {
@@ -207,31 +259,43 @@ $orange: #f5a000;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #072526;
+        background: $black;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
 
+        .service-title {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #fff;
+          z-index: 3;
+        }
+
         .service-text {
           color: #fff;
-          font-size: 10px;
-          font-weight: bold;
-          padding: 0 100px;
+          font-size: 1rem;
+          z-index: 3;
+          padding: 0 150px;
         }
       }
     }
   }
 
   .team-member {
-    padding: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem 8% 0;
 
     .our-tittle {
       text-align: center;
       h1 {
-        margin-bottom: 20px;
         font-size: 1.8rem;
-        color: $orange;
+        color: $red;
       }
     }
 
@@ -245,7 +309,7 @@ $orange: #f5a000;
     .member-card {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: start;
       gap: 0.75rem;
       align-items: center;
       background: #ffffff;
@@ -294,11 +358,14 @@ $orange: #f5a000;
         color: #555555;
         font-size: 14px;
         line-height: 1.6;
+        text-align: center;
       }
 
       .social-links {
+        flex: 1;
         display: flex;
         justify-content: center;
+        align-items: end;
         gap: 10px;
         a {
           color: #36b372;
@@ -306,44 +373,89 @@ $orange: #f5a000;
           text-decoration: none;
           transition: color 0.3s ease;
 
-          &:hover {
-            color: #ff4500;
+          i {
+            &:hover {
+              color: #ff4500;
+            }
           }
         }
       }
     }
   }
-
-  @media (max-width: 768px) {
+}
+@media screen and (max-width: 728px) {
+  #aboutSection {
+    .about-us {
+      h1 {
+        font-size: 3rem;
+      }
+    }
     .introduction {
-      padding: 3em 3em;
-      margin: 2em 1em;
+      .introduction-content {
+        gap: 1rem;
+        flex-direction: column;
+        h2 {
+          font-size: 2.25rem;
+          text-align: center;
+        }
+
+        p {
+          flex: 1;
+          font-size: 1.25rem;
+          text-align: center;
+        }
+      }
     }
-    .introduction-content {
+
+    .vision-mission {
       flex-direction: column;
-      flex-wrap: wrap;
-      padding: 1em 2em;
-      margin: 2em 2em;
+      gap: 2rem;
+
+      .vimi-card {
+        width: 300px;
+        height: auto;
+        gap: 1rem;
+      }
+
+      .vimi-content {
+        padding: 1.5rem 1rem 4rem;
+      }
     }
 
-    .values-point {
-      padding: 1em 2em;
-      margin: 1em 1em;
-      justify-items: center;
-      justify-content: center;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-  }
+    .values {
+      .values-point {
+        gap: 1.25rem;
+        flex-direction: column;
+      }
 
-  @media (min-width: 769px) {
-    .introduction-content {
-      flex-direction: row;
+      .values-item {
+        text-align: center;
+        width: 100%;
+        font-size: 1rem;
+        padding: 1.5rem 1.5rem;
+      }
     }
 
-    .values-point {
-      flex-direction: row;
+    .services {
+      &-title {
+        font-size: 1.5rem;
+      }
+      &-container {
+        height: 450px;
+      }
+
+      .services-item {
+        .service-overlay {
+          .service-title {
+            font-size: 1.25rem;
+          }
+
+          .service-text {
+            font-size: 0.65rem;
+            padding: 0 40px;
+          }
+        }
+      }
     }
   }
 }

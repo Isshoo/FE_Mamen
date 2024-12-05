@@ -21,11 +21,11 @@ class reviewForm extends HTMLElement {
     this.emptyContent();
     this.innerHTML += `
       <section class="formReviewContainer">
+        <div class="formDisabler"><p class="disablerText">Harap Login terlebih dahulu untuk memberikan review</p></div>
         <div class="titleFormReview">
           <h2>Form Review</h2>
         </div>
         <form action="" class="formReview" id="formReview">
-          <div class="formDisabler"><p class="disablerText">Harap Login terlebih dahulu untuk memberikan review</p></div>
           <div class="formReviewDesc">
             <div class="nama-review">
               <label for="namaReviewer">Nama</label>

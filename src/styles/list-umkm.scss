@@ -1,7 +1,11 @@
-$yellow: #ff9e1b;
-$red: #da281c;
-$cream: #eeeeeeca;
-$black: rgb(255, 255, 255);
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+$green: #36b372;
 
 .exploreUmkm {
   padding-block: 72.58px;
@@ -13,7 +17,7 @@ $black: rgb(255, 255, 255);
 
 .judul-list-umkm {
   width: 100%;
-  background-color: #91140b;
+  background-color: $dark;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,13 +63,13 @@ $black: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    background-color: $black;
+    background-color: $white;
     justify-content: start;
     align-items: center;
     transition: transform 0.5s ease-in-out;
     overflow: hidden;
     height: 100%;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.402);
 
     .umkm-img {
       box-sizing: border-box;
@@ -96,7 +100,7 @@ $black: rgb(255, 255, 255);
       padding-block: 1rem;
 
       position: relative;
-      border-bottom: 1px solid $red;
+      border-bottom: 1px solid $dark;
       height: 100%;
       width: 100%;
       padding-inline: 8%;
@@ -112,31 +116,22 @@ $black: rgb(255, 255, 255);
         a {
           font-size: 1.2rem;
           font-weight: 700;
-          color: black;
+          color: $dark;
           line-height: 1.2;
           display: inline-block;
           margin-bottom: 0.5rem;
           padding-block: 0.5rem;
-          border-bottom: 1px solid $red;
+          border-bottom: 1px solid black;
           min-width: 44px;
           min-height: 44px;
           text-decoration: none;
 
           &:hover {
-            color: $red;
-            i {
-              color: $red;
-            }
-          }
-          &:active {
-            color: red;
-            i {
-              color: red;
-            }
+            color: $yellow;
           }
 
           i {
-            color: black;
+            color: $yellow;
             margin-left: 0.25rem;
             font-size: 1rem;
           }
@@ -161,7 +156,7 @@ $black: rgb(255, 255, 255);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background-color: $yellow;
+      background-color: $dark;
       padding: 0.4em 0.6em;
       p {
         font-size: 0.7em;

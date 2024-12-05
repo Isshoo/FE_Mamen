@@ -7,7 +7,7 @@ export default function ProfileProdukGsapJs() {
   // PRODUK CARD
   gsap.from('.product-card', {
     opacity: 0,
-    x: 30,
+    x: 0,
     duration: 2,
     ease: 'power2.out',
     stagger: 0.5,
