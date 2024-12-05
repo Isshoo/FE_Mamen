@@ -34,11 +34,13 @@ $green: #36b372;
 }
 
 .quote-umkm-list {
+  position: absolute;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   padding-block: 2rem;
+  margin-top: 6rem;
 
   p {
     width: 100%;
@@ -48,6 +50,7 @@ $green: #36b372;
     text-align: center;
     font-weight: 400;
     line-height: 1.5;
+    color: $yellow;
   }
 }
 
@@ -100,7 +103,6 @@ $green: #36b372;
       gap: 0.3rem;
       margin: 0 1.6rem 1rem;
       padding-block: 1rem;
-
       position: relative;
       border-bottom: 1px solid $dark;
       height: 100%;
