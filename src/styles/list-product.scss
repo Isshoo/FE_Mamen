@@ -73,7 +73,6 @@ $green: #36b372;
 }
 
 .exploreProd {
-  padding-block: 72.58px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,15 +82,18 @@ $green: #36b372;
 .judul-list-prod {
   width: 100%;
   background-color: $dark;
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1.5rem 0;
+  padding: 10rem 8%;
+  margin: -0px;
+  height: 20vh;
 
   h2 {
     font-size: 2rem;
     color: white;
-    text-align: center;
+    text-align: left;
     font-weight: 300;
   }
 }
