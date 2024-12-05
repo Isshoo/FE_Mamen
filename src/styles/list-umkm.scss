@@ -21,7 +21,9 @@ $green: #36b372;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
+  position: relative;
+  margin-top: -75px;
+  padding: 10rem 8%;
 
   h2 {
     font-size: 2rem;
@@ -32,11 +34,13 @@ $green: #36b372;
 }
 
 .quote-umkm-list {
+  position: absolute;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   padding-block: 2rem;
+  margin-top: 6rem;
 
   p {
     width: 100%;
@@ -46,6 +50,7 @@ $green: #36b372;
     text-align: center;
     font-weight: 400;
     line-height: 1.5;
+    color: #fba635;
   }
 }
 
@@ -98,7 +103,6 @@ $green: #36b372;
       gap: 0.3rem;
       margin: 0 1.6rem 1rem;
       padding-block: 1rem;
-
       position: relative;
       border-bottom: 1px solid $dark;
       height: 100%;
