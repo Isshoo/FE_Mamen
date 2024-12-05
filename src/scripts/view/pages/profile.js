@@ -119,15 +119,17 @@ const Profile = {
         pageload.remove();
       }
       container.innerHTML = `
-          <div class="blank-profile">
-
-          <img class="blankImg" src="./images/newumkm.webp">
-          <div class="blankCon">
-            <h2>Nothing in here...</h2>
-            <p>Kamu belum mempunyai UMKM. Silahkan menambah UMKM terlebih dahulu.</p>
-            <button id="new-umkm">Tambah UMKM</button>
-          </div>
-          </div>`;
+        <div class="blank-profile-con">
+        <div class="blank-profile">
+        <img class="blankImg" src="./images/newumkm.webp">
+        <div class="blankCon">
+        <h2>Nothing in here...</h2>
+        <p>Kamu belum mempunyai UMKM. Silahkan menambah UMKM terlebih dahulu.</p>
+        <button id="new-umkm">Tambah UMKM</button>
+        </div>
+        </div>
+        </div>
+          `;
       document.querySelector('#new-umkm').addEventListener('click', () => {
         document.querySelector('umkm-form').style.display = 'block';
       });
