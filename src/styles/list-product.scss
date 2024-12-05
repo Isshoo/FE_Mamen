@@ -84,17 +84,29 @@ $green: #36b372;
   background-color: $dark;
   position: relative;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 10rem 8%;
   margin: -0px;
   height: 20vh;
+  flex-direction: column;
 
   h2 {
     font-size: 2rem;
     color: white;
     text-align: left;
-    font-weight: 300;
+    font-weight: 500;
+  }
+
+  p{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $yellow;
   }
 }
 

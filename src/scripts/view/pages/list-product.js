@@ -20,11 +20,9 @@ const ListProduct = {
       <section class="exploreProd">
       <div class="judul-list-prod">
           <h2>Daftar Produk</h2>
-        </div>
-        <div class="quote-prod-list">
           <p>"Setiap Usaha Kecil Memiliki Cerita Besar. Mari Dukung Kreativitas Lokal!"</p>
+          <search-bar></search-bar>
         </div>
-        <search-bar></search-bar>
         <div class="page-list-prod">
           <div class="list-product"></div>
         </div>
