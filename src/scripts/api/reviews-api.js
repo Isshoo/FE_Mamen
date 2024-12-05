@@ -21,8 +21,13 @@ class ReviewsDbSource {
       const responseJson = await response.json();
 
       Swal.fire({
+        icon: 'success',
         title: `${responseJson.message}`,
         text: `${responseJson.status}`,
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
 
       return responseJson.data;

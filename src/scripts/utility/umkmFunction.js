@@ -30,6 +30,10 @@ async function tambahUmkm() {
         icon: 'success',
         title: 'Berhasil',
         text: 'UMKM berhasil ditambahkan!',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
       window.location.reload();
     } catch (error) {
@@ -100,6 +104,10 @@ async function umkmImage() {
         icon: 'success',
         title: 'Berhasil',
         text: 'Gambar UMKM berhasil diunggah!',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
     } catch (error) {
       Swal.fire({
@@ -144,6 +152,10 @@ async function addCategory() {
         icon: 'success',
         title: 'Berhasil',
         text: 'Kategori berhasil ditambahkan!',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
     } catch (error) {
       Swal.fire({

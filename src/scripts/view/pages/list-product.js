@@ -1,5 +1,4 @@
 import ProductsDbSource from '../../api/products-api';
-import SearchDbSource from '../../api/search-api';
 import pageListProdukGsapJs from '../../utility/animation/list-produk-page/list-produk-gsap';
 import produkItemGsapJs from '../../utility/animation/list-produk-page/produk-item-gsap';
 // import footerGsapJs from '../../utility/animation/home-page/footer-gsap';
@@ -35,30 +34,47 @@ const ListProduct = {
     const productContainer = document.querySelector('.list-product');
     productContainer.innerHTML = '';
     await Loading.loadingPage(productContainer);
-    const allProductList = await ProductsDbSource.getProducts();
+    const allProductList = await ProductsDbSource.getProducts(); // Ambil semua produk di awal
     const pageload = document.querySelector('.pageload');
     if (pageload) {
       pageload.remove();
     }
     pageListProdukGsapJs();
     await renderProdukt(allProductList);
-    // footerGsapJs();
+
     // --------------------------------------------
     const searchInput = document.getElementById('searchInput');
     const searchForm = document.getElementById('searchForm');
 
-    searchInput.addEventListener('input', async (e) => {
+    // Filter produk secara lokal tanpa menggunakan API
+    searchInput.addEventListener('input', (e) => {
       e.preventDefault();
-      const query = searchInput.value;
-      const filteredProducts = await SearchDbSource.search(query);
-      await renderProdukt(filteredProducts.products);
+      const query = searchInput.value.toLowerCase();
+
+      const filteredProducts = allProductList.filter((product) => (
+        product.name.toLowerCase().includes(query)
+      || product.product_type.toLowerCase().includes(query)
+      || product.description.toLowerCase().includes(query)
+      || product.price.toString().includes(query)
+      || product.umkm_name.toString().includes(query)
+      ));
+
+      renderProdukt(filteredProducts);
     });
 
-    searchForm.addEventListener('submit', async (e) => {
+    searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const query = searchInput.value;
-      const filteredProducts = await SearchDbSource.search(query);
-      await renderProdukt(filteredProducts.products);
+      const query = searchInput.value.toLowerCase();
+
+      const filteredProducts = allProductList.filter((product) => (
+        product.name.toLowerCase().includes(query)
+      || product.type.toLowerCase().includes(query)
+      || product.description.toLowerCase().includes(query)
+      || product.price.toString().includes(query)
+      || product.umkm_name.toString().includes(query)
+      ));
+
+      renderProdukt(filteredProducts);
     });
 
     produkItemGsapJs();

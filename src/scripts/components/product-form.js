@@ -43,6 +43,10 @@ class ProductForm extends HTMLElement {
           icon: 'success',
           title: 'Berhasil',
           text: 'Produk berhasil ditambahkan!',
+          confirmButtonText: 'OK',
+          customClass: {
+            confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+          },
         });
       } catch (error) {
         Swal.fire({

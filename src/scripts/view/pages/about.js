@@ -1,3 +1,4 @@
+import aboutGsapJs from '../../utility/animation/about-page/about-gsap';
 import Loading from '../../utility/loading';
 
 const AboutUs = {
@@ -6,7 +7,7 @@ const AboutUs = {
   <section id="aboutSection">
       <div class="about-us">
         <img
-        src='./images/forAbout.webp' 
+        src='./images/coba7.webp' 
         alt="About Image" class="about-image" />
         <div class="txtAbout">
         <h1>About <span>Us</span></h1>
@@ -21,14 +22,14 @@ const AboutUs = {
             </div>
         </div>
   <div class="vision-mission">
-    <div class="vimi-card">
+    <div class="vimi-card left">
       <div class="header red"></div>
       <div class="vimi-content">
         <h2>Our Vision</h2>
         <p>Kami bercita-cita menjadi mitra utama UMKM dalam mendorong pertumbuhan ekonomi melalui solusi inovatif, berkelanjutan, dan berdampak positif bagi masyarakat.</p>
       </div>
     </div>
-    <div class="vimi-card">
+    <div class="vimi-card right">
       <div class="header orange"></div>
       <div class="vimi-content">
         <h2>Our Mission</h2>
@@ -53,28 +54,28 @@ const AboutUs = {
         <div class="filter-green"></div>
         <img src="./images/about-us-potrait-small.jpg" alt="Service Image 1" class="service-image">
         <div class="service-overlay">
-          <p class="service-title">Promotion</p>
+          <p class="service-title prom">Promotion</p>
         </div>
       </div>
       <div class="services-item">
         <div class="service-overlay">
-          <p class="service-text">
+          <p class="service-text prom">
             Menjadi mitra terbaik bagi UMKM dengan menyediakan solusi inovatif yang membantu mempromosikan dan mengembangkan usaha mereka secara berkelanjutan.
           </p>
         </div>
       </div>
       <div class="services-item">
         <div class="service-overlay">
-          <p class="service-text">
+          <p class="service-text eds">
             Menyediakan edukasi dan informasi terkini dan relevan untuk membantu UMKM tetap kompetitif, mulai dari tren pasar hingga panduan praktis dalam mengelola usaha.
           </p>
         </div>
       </div>
       <div class="services-item">
         <div class="filter-green"></div>
-        <img src="./images/coba7.webp" alt="Service Image 3" class="service-image">
+        <img src="./images/about-us-potrait-small.jpg" alt="Service Image 3" class="service-image">
         <div class="service-overlay">
-          <p class="service-title">Education</p>
+          <p class="service-title eds">Education</p>
         </div>
       </div>
     </div>
@@ -162,6 +163,7 @@ const AboutUs = {
     if (pageload) {
       pageload.remove();
     }
+    aboutGsapJs();
   },
 };
 

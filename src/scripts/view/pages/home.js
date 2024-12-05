@@ -152,7 +152,7 @@ const Home = {
     infiniteScroll.style.width = `${totalWidth}px`;
 
     // Hitung durasi animasi berdasarkan total panjang kontainer
-    const animationDuration = (totalWidth + window.innerWidth) / 100; // Kecepatan 100px per detik
+    const animationDuration = (totalWidth + window.innerWidth) / 200; // Kecepatan 100px per detik
     infiniteScroll.style.animationDuration = `${animationDuration}s`;
     homeReviewGsapJs();
   },

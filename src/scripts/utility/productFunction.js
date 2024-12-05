@@ -48,6 +48,10 @@ async function editProduct(id) {
         icon: 'success',
         title: 'Berhasil',
         text: 'Produk berhasil diperbarui!',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
     } catch (error) {
       Swal.fire({
@@ -153,6 +157,10 @@ async function productImage(id) {
         icon: 'success',
         title: 'Berhasil',
         text: 'Gambar produk berhasil diunggah!',
+        confirmButtonText: 'OK',
+        customClass: {
+          confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+        },
       });
     } catch (error) {
       Swal.fire({

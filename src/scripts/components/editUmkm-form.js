@@ -52,6 +52,10 @@ class editUmkmForm extends HTMLElement {
           icon: 'success',
           title: 'Berhasil',
           text: 'Data UMKM berhasil diperbarui!',
+          confirmButtonText: 'OK',
+          customClass: {
+            confirmButton: 'custom-ok-button', // Tambahkan kelas khusus
+          },
         });
       } catch (error) {
       // Show error message

@@ -265,7 +265,7 @@ form-review {
   display: flex;
   gap: 2rem;
   width: max-content;
-  transform: translateX(100%);
+  transform: translateX(30%);
   animation: infinite-scroll linear infinite;
   min-height: 356.88px;
 
@@ -277,7 +277,7 @@ form-review {
 
 @keyframes infinite-scroll {
   to {
-    transform: translateX(-110%);
+    transform: translateX(-100%);
   }
 }
 
