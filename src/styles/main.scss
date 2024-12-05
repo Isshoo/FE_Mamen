@@ -3,7 +3,8 @@ $yellow: #fba635;
 $brown: #fdac58;
 $red: #b81202;
 $cream: whitesmoke;
-$black: #072526;
+$black: #174c4e;
+$dark: #072526;
 
 /* font */
 $info-home: "Arizonia";
@@ -62,7 +63,7 @@ html {
   scroll-behavior: smooth;
 
   body {
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -296,6 +297,9 @@ header {
                 &:hover {
                   color: $red;
                 }
+                &.active-link {
+                  color: $red;
+                }
               }
             }
           }
@@ -351,18 +355,13 @@ main {
 
   &::after {
     content: "";
-
     position: absolute;
     display: block;
     bottom: -2px;
     right: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(
-      0deg,
-      whitesmoke 50%,
-      rgba(255, 255, 255, 0) 90%
-    );
+    background: linear-gradient(0deg, white 50%, rgba(255, 255, 255, 0) 90%);
   }
 
   picture {
@@ -417,7 +416,7 @@ main {
         text-shadow: 1px 1px 3px rgb(0, 0, 0);
         line-height: 1.4;
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.735);
+        color: rgba(255, 255, 255, 0.83);
       }
 
       button {
@@ -466,9 +465,101 @@ main {
   position: relative;
   overflow: hidden;
 
-  .titleReview {
-    text-align: center;
-    font-size: 2rem;
+  &.home-review {
+    padding: 2.5rem 0;
+
+    .title-review-con {
+      padding-inline: 8%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+
+      .quotes i {
+        color: $red;
+        font-size: 3rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+      h2 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      p {
+        max-width: 700px;
+        line-height: 1.4;
+        font-size: 1.1rem;
+        color: rgba(0, 0, 0, 0.83);
+        text-align: center;
+      }
+    }
+
+    .review-cons {
+      background-image: url(../public/images/background-review.jpeg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      margin-block: 3rem;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: -2px;
+        right: 0;
+        width: 100%;
+        height: 20%;
+        background: linear-gradient(
+          180deg,
+          white 10%,
+          rgba(255, 255, 255, 0) 90%
+        );
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -2px;
+        right: 0;
+        width: 100%;
+        height: 20%;
+        background: linear-gradient(
+          0deg,
+          white 10%,
+          rgba(255, 255, 255, 0) 90%
+        );
+      }
+
+      .white-filter {
+        background-color: rgba(255, 255, 255, 0.347);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .closing-quotes {
+      padding-top: 1rem;
+      padding-inline: 8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+
+      p {
+        border-top: 1px solid $dark;
+        padding-block: 2rem;
+        max-width: 700px;
+        line-height: 1.4;
+        font-family: $info-home;
+        font-size: 1.5rem;
+        color: $yellow;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -476,7 +567,7 @@ footer {
   display: flex;
   padding-block: 5rem 3rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: $red;
+  background-color: $dark;
 
   a,
   h3,
@@ -512,6 +603,23 @@ footer-bar {
   .footer-logo {
     display: inline-block;
     margin-bottom: 1rem;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: $info-home;
+      color: white;
+      text-shadow: 1px 1px 3px rgb(0, 0, 0);
+
+      span {
+        color: $yellow;
+        font-family: $info-home;
+        font-weight: bold;
+        font-size: 2.5rem;
+        margin-left: 3px;
+        text-shadow: 1px 1px 3px rgb(0, 0, 0);
+      }
+    }
   }
   .footer-description {
     line-height: 1.75rem;
@@ -538,6 +646,10 @@ footer-bar {
       li {
         .footer-link {
           transition: color 0.4s;
+
+          &:hover {
+            color: $red;
+          }
         }
       }
     }
@@ -553,6 +665,15 @@ footer-bar {
 
   .footer-copy {
     text-align: center;
+    p {
+      span {
+        display: inline-block;
+        color: white;
+        border-bottom: $red;
+        font-weight: 800;
+        font-size: 1.05rem;
+      }
+    }
   }
 
   .footer-social {
@@ -565,6 +686,9 @@ footer-bar {
         transform 0.4s;
       &:hover {
         transform: translateY(-0.25rem);
+      }
+      i {
+        color: $yellow;
       }
     }
   }

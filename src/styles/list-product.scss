@@ -1,13 +1,75 @@
-$yellow: #ff9e1b;
-$red: #da281c;
-$cream: #eeeeeeca;
-$black: rgb(255, 255, 255);
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+$green: #36b372;
 
 .product-home-con {
   width: 100%;
   padding: 2rem 8%;
   position: relative;
   overflow: hidden;
+
+  position: relative;
+  background-image: url(../public/images/hero-image.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .green-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #072526d1;
+  }
+
+  .homeProdTitle {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 1rem;
+
+    h2 {
+      display: inline-block;
+      position: relative;
+      font-size: 1.75rem;
+      color: white;
+      font-weight: 600;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: $yellow;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+      }
+    }
+  }
+
+  .link-to-products {
+    position: absolute;
+    z-index: 10;
+    top: 4rem;
+    right: 8%;
+
+    a {
+      display: inline-block;
+      font-size: 1.25rem;
+      color: $yellow;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }
 
 .exploreProd {
@@ -20,7 +82,7 @@ $black: rgb(255, 255, 255);
 
 .judul-list-prod {
   width: 100%;
-  background-color: #91140b;
+  background-color: $dark;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,9 +128,8 @@ $black: rgb(255, 255, 255);
   position: relative;
   padding: 0.5rem;
   display: flex;
-  border: 0.5px solid yellow;
   flex-direction: column;
-  background-color: $black;
+  background-color: $white;
   justify-content: start;
   align-items: center;
   transition: transform 0.5s ease-in-out;
@@ -105,7 +166,7 @@ $black: rgb(255, 255, 255);
         display: flex;
         align-items: center;
         padding: 0.5rem 0.75rem;
-        color: black;
+        color: white;
         background-color: rgba(255, 255, 255, 0.598);
         border-radius: 0 5px 0;
         cursor: pointer;
@@ -145,7 +206,9 @@ $black: rgb(255, 255, 255);
     span {
       position: absolute;
       padding: 0.4em 1em;
-      background-color: $yellow;
+      background-color: $red;
+      color: white;
+      text-shadow: -1px 1px 3px rgba(0, 0, 0, 0.587);
       border-radius: 3px;
       z-index: 99;
       display: inline-block;
@@ -158,11 +221,11 @@ $black: rgb(255, 255, 255);
     h3 {
       font-size: 1.2rem;
       font-weight: 700;
-      color: black;
+      color: $dark;
       line-height: 1.2;
       display: inline-block;
       padding-block: 0.25rem;
-      border-bottom: 1px solid $yellow;
+      border-bottom: 1px solid black;
       text-decoration: none;
     }
     .prod-des {
@@ -175,7 +238,7 @@ $black: rgb(255, 255, 255);
     }
     .prod-type {
       font-size: 0.95rem;
-      color: $red;
+      color: $yellow;
     }
 
     .prod-umkm {
@@ -184,7 +247,7 @@ $black: rgb(255, 255, 255);
       align-items: center;
       a {
         font-size: 0.95rem;
-        color: black;
+        color: $dark;
         align-items: center;
         font-weight: bold;
 
@@ -211,7 +274,7 @@ $black: rgb(255, 255, 255);
       button {
         padding: 0.5rem;
         border-radius: 3px;
-        background-color: $red;
+        background-color: $dark;
         color: white;
         cursor: pointer;
         transition: background-color 0.3s ease-in-out;
@@ -267,10 +330,53 @@ $black: rgb(255, 255, 255);
   overflow-x: auto;
   width: 100%;
   padding: 1rem;
+  z-index: 10;
 
   .product-card {
     min-width: 250px;
     max-width: 250px;
     height: 440px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+    .product-img img {
+      border-radius: 10px;
+    }
+  }
+}
+
+//responsive
+@media screen and (max-width: 768px) {
+  .product-home-con {
+    .homeProdTitle {
+      display: flex;
+      justify-content: center;
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    }
+
+    .link-to-products {
+      position: static;
+      padding: 1rem;
+      width: 100%;
+      display: flex;
+      justify-content: end;
+
+      a {
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        font-size: 1rem;
+        color: $yellow;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
   }
 }

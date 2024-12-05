@@ -1,7 +1,11 @@
-$yellow: #ff9e1b;
-$red: #da281c;
-$cream: #eeeeeeca;
-$black: rgb(255, 255, 255);
+$white: rgb(255, 255, 255);
+$yellow: #fba635;
+$brown: #fdac58;
+$red: #b81202;
+$cream: whitesmoke;
+$black: #174c4e;
+$dark: #072526;
+$green: #36b372;
 
 .exploreUmkm {
   padding-block: 72.58px;
@@ -13,11 +17,13 @@ $black: rgb(255, 255, 255);
 
 .judul-list-umkm {
   width: 100%;
-  background-color: #91140b;
+  background-color: $dark;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 0;
+  position: relative;
+  margin-top: -75px;
+  padding: 10rem 8%;
 
   h2 {
     font-size: 2rem;
@@ -28,11 +34,13 @@ $black: rgb(255, 255, 255);
 }
 
 .quote-umkm-list {
+  position: absolute;
   width: 100%;
   justify-content: center;
   align-items: center;
   display: flex;
   padding-block: 2rem;
+  margin-top: 6rem;
 
   p {
     width: 100%;
@@ -42,6 +50,7 @@ $black: rgb(255, 255, 255);
     text-align: center;
     font-weight: 400;
     line-height: 1.5;
+    color: #fba635;
   }
 }
 
@@ -59,7 +68,7 @@ $black: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    background-color: $black;
+    background-color: $white;
     justify-content: start;
     align-items: center;
     transition: transform 0.5s ease-in-out;
@@ -94,9 +103,8 @@ $black: rgb(255, 255, 255);
       gap: 0.3rem;
       margin: 0 1.6rem 1rem;
       padding-block: 1rem;
-
       position: relative;
-      border-bottom: 1px solid $red;
+      border-bottom: 1px solid $dark;
       height: 100%;
       width: 100%;
       padding-inline: 8%;
@@ -112,31 +120,22 @@ $black: rgb(255, 255, 255);
         a {
           font-size: 1.2rem;
           font-weight: 700;
-          color: black;
+          color: $dark;
           line-height: 1.2;
           display: inline-block;
           margin-bottom: 0.5rem;
           padding-block: 0.5rem;
-          border-bottom: 1px solid $red;
+          border-bottom: 1px solid black;
           min-width: 44px;
           min-height: 44px;
           text-decoration: none;
 
           &:hover {
-            color: $red;
-            i {
-              color: $red;
-            }
-          }
-          &:active {
-            color: red;
-            i {
-              color: red;
-            }
+            color: $yellow;
           }
 
           i {
-            color: black;
+            color: $yellow;
             margin-left: 0.25rem;
             font-size: 1rem;
           }
@@ -161,7 +160,7 @@ $black: rgb(255, 255, 255);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background-color: $yellow;
+      background-color: $dark;
       padding: 0.4em 0.6em;
       p {
         font-size: 0.7em;

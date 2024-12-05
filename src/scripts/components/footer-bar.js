@@ -13,7 +13,7 @@ class FooterBar extends HTMLElement {
       <div class="footer-container">
         <div class="footer-content">
           <div class="footer-info">
-            <a href="#" class="footer-logo"><h3>Mamen</h3></a>
+            <a href="#" class="footer-logo"><h3>Ma<span>men</span></h3></a>
 
             <p class="footer-description">
               Temukan dan dukung UMKM lokal di Mamen! Jelajahi bisnis-bisnis unik dari Sulawesi Utara dan bantu tumbuhkan ekonomi bersama.
@@ -137,7 +137,7 @@ class FooterBar extends HTMLElement {
 
           <div class="footer-copy">
             <p>
-              &#169; Copyright Mamenmdo. All rights reserved
+              &#169; Copyright <span>Mamenmdo.</span> All rights reserved
             </p>
           </div>
         </div>
