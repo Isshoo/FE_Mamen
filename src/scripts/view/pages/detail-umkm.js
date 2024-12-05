@@ -41,10 +41,14 @@ const renderProducts = async (umkmId) => {
   const products = await ProductsDbSource.getProductsByUmkm(umkmId);
   productContainer.innerHTML = '';
   try {
-    productContainer.innerHTML = products.length > 0
-      ? products.sort((a, b) => a.name.localeCompare(b.name))
+    if (products.length > 0) {
+      productContainer.innerHTML = products.sort((a, b) => a.name.localeCompare(b.name))
         .map((productItem) => createFreeProductItemForUmkmTemplate(productItem))
-        .join('') : 'Belum ada produk untuk ditampilkan.';
+        .join('');
+      DetailUmkmProdukGsapJs();
+    } else {
+      productContainer.innerHTML = 'Belum ada produk yang ditampilkan.';
+    }
   } catch {
     productContainer.innerHTML = 'Tidak ada produk yang ditampilkan.';
   }
@@ -56,9 +60,12 @@ const renderReviews = async (umkmId) => {
   const reviews = await ReviewsDbSource.getReviewsByUmkm(umkmId);
   reviewContainer.innerHTML = '';
   try {
-    reviewContainer.innerHTML = reviews.length > 0
-      ? reviews.map((review) => createReviewItemTemplate(review)).join('')
-      : 'Tidak ada review yang ditampilkan.';
+    if (reviews.length > 0) {
+      reviewContainer.innerHTML = reviews.map((review) => createReviewItemTemplate(review)).join('');
+      detailUmkmReviewGsapJs();
+    } else {
+      reviewContainer.innerHTML = 'Belum ada review yang ditampilkan.';
+    }
   } catch {
     reviewContainer.innerHTML = 'Terjadi kesalahan saat memuat ulasan.';
   }
@@ -123,10 +130,9 @@ const DetailUmkm = {
     DetailUmkmGsapJs();
     // RENDER PRODUCTS BY UMKM
     await renderProducts(url.id);
-    DetailUmkmProdukGsapJs();
+
     // RENDER REVIEWS BY UMKM
     await renderReviews(url.id);
-    detailUmkmReviewGsapJs();
 
     // OTORISASI OWNER FOR ADD REVIEW
     const accessToken = localStorage.getItem('accessToken');
