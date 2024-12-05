@@ -56,7 +56,7 @@ const createProductItemTemplate = (product) => `
               <form id="addImageFormProd-${product.id}" class="addImageFormProd" data-id="${product.id}">
                 <label id="addImgLabelProd-${product.id}" for="addimageprod-${product.id}"><i class="fa-solid fa-download"></i></label>
                 <input type="file" class="addimageprod" id="addimageprod-${product.id}" accept="image/*" name="addimageprod-${product.id}" placeholder="Maks. 2mb" required>
-                <button class="resetImgProd" id="resetImgProd-${product.id}" type="reset">reset</button>
+                <button class="resetImgProd" id="resetImgProd-${product.id}" type="reset">Reset</button>
                 <button class="submitImgProd" id="submitImgProd-${product.id}" type="submit">Submit</button>
               </form>
               </div>
