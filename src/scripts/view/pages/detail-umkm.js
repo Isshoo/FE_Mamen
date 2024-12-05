@@ -77,7 +77,7 @@ const DetailUmkm = {
         <div class="section-title">
             <h2>Products</h2>
           </div>
-        <div id="products" class="list-products scroll">
+        <div id="products" class="list-products">
         </div>
         <div>
           <div class="separator"></div>

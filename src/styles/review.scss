@@ -24,13 +24,14 @@ $green: #36b372;
 
 // styling
 .section-review {
-  margin-top: 1rem;
+  margin-top: 3rem;
   border-radius: 8px;
   background-image: url(../public/images/background-review.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  padding: 0 8%;
 
   .white-filter {
     background-color: rgba(255, 255, 255, 0.347);
@@ -45,7 +46,7 @@ $green: #36b372;
     align-items: start;
     display: flex;
     gap: 2rem;
-    padding: 2rem;
+    padding: 2rem 0;
   }
 }
 
@@ -61,7 +62,7 @@ form-review {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border-radius: 4px;
+  border-radius: 10px;
   height: 100%;
   background-color: rgba(245, 245, 245, 0.68);
   backdrop-filter: blur(10px);
@@ -164,8 +165,7 @@ form-review {
 }
 .review-item {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: rgba(245, 245, 245, 0.68);
-  backdrop-filter: blur(10px);
+  background-color: white;
 
   gap: 1.2rem;
   border-bottom: 1px solid $yellow;
@@ -230,9 +230,9 @@ form-review {
     align-items: center;
     gap: 0.25rem;
     i {
-        color: #ff9e1b;
-        font-size: 1.25rem;
-      }
+      color: #ff9e1b;
+      font-size: 1.25rem;
+    }
     h4 {
       font-size: 1.25rem;
       font-weight: 900;
@@ -317,7 +317,7 @@ form-review {
         .isiReview {
           align-items: center;
           margin-bottom: 1.5rem;
-          padding: 0;
+          padding: 2rem 0;
 
           form-review {
             margin: 0;
@@ -351,10 +351,6 @@ form-review {
                 }
               }
             }
-          }
-
-          .detailumkm-reviews {
-            padding: 1rem 8%;
           }
         }
       }

@@ -144,12 +144,7 @@ editumkm-form {
 // responsive
 
 @media screen and (min-width: 800px) {
-  #detailContainer {
-    flex: 1;
-    #umkmDetail {
-      flex: 1;
-    }
-  }
+  
   .blank-profile {
     flex: 1;
     flex-direction: row;

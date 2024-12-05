@@ -35,28 +35,28 @@ $font-default: "Oxygen";
       height: 100%;
     }
 
-    .txtAbout{
+    .txtAbout {
       display: flex;
       flex-direction: column;
       padding: 1em 2em;
       justify-content: center;
       align-items: center;
-    h1 {
-      z-index: 10;
-      font-size: 3.5rem;
-      color: white;
-      span {
+      h1 {
+        z-index: 10;
         font-size: 3.5rem;
-        color: $red;
+        color: white;
+        span {
+          font-size: 3.5rem;
+          color: $red;
+        }
+      }
+
+      p {
+        z-index: 10;
+        font-size: 1rem;
+        color: white;
       }
     }
-
-    p {
-      z-index: 10;
-      font-size: 1rem;
-      color: white;
-    }
-  }
     &::after {
       content: "";
 

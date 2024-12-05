@@ -148,7 +148,7 @@ $green: #36b372;
   align-items: center;
   transition: transform 0.5s ease-in-out;
   height: 100%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.401);
 
   .product-img {
     box-sizing: border-box;
@@ -325,16 +325,17 @@ $green: #36b372;
 }
 
 .list-products {
-  padding-block: 3rem 1rem;
+  padding: 3rem 8% 1rem;
   display: flex;
   gap: 1rem;
   overflow-x: auto;
-
   width: 100%;
+  min-height: 472px;
 
   .product-card {
     min-width: 250px;
     max-width: 250px;
+    height: 440px;
   }
 }
 
