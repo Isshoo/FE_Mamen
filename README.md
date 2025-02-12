@@ -14,6 +14,54 @@ MAMEN adalah sebuah website yang dibuat untuk membantu para pelaku UMKM (khususn
 - Mengelola data UMKM dan produk
 - Memberikan review untuk UMKM
 
+## Tech Stack
+- HTML : Untuk membuat struktur dasar halaman web.
+- CSS : Untuk mengatur tampilan halaman web.
+- Javascript : Bahasa pemrograman yang digunakan untuk menambahkan interaktivitas dan fungsionalitas ke halaman web.
+- Webpack : Bundler untuk mengelola modul dan aset-aset ke dalam bundle yang lebih efisien.
+- Sass : CSS Preprocessor untuk menulis CSS dengan lebih efisien.
+- esLint : Tools untuk menjaga konsistensi kode dan mendeteksi kesalahan.
+- Gsap : Library untuk animasi website.
+- SweetAlert2: Library untuk menampilkan alert yang cantik dan responsif.
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/Isshoo/FE_Mamen.git
+```
+
+Make sure to be in Frontend-main directory
+
+```bash
+cd FE_Mamen
+```
+
+Install dependencies
+
+```bash
+npm install or npm i
+```
+Build project
+
+```bash
+npm run Build
+```
+
+Run the server in Development mode
+
+```bash
+npm run dev
+```
+or Run the server in Production mode
+
+```bash
+npm run build-serve
+```
+
+
 ## Langkah-langkah Penggunaan
 
 ### 1. Mengakses Website tanpa Login
@@ -97,4 +145,4 @@ MAMEN adalah sebuah website yang dibuat untuk membantu para pelaku UMKM (khususn
 - **Melia N. Kuntono** (B243073A)
 
 ## Link Terkait
-- Website: [MAMEN Website](https://mamen-mdo.vercel.app/)
+- [Dokumentasi Backend](https://github.com/Isshoo/BE_Mamen)
