@@ -18,12 +18,12 @@ class UmkmSlider extends HTMLElement {
     const umkms = await UmkmsDbSource.getUmkms();
 
     if (umkms.length === 0) {
-      umkmContainer.innerHTML = 'Tidak ada UMKM untuk ditampilkan.';
+      umkmContainer.innerHTML = '<p class="blank-information">Belum ada UMKM untuk ditampilkan.</p>';
     } else {
       const filteredUmkms = umkms.filter((umkm) => umkm.rating >= 4);
 
       if (filteredUmkms.length === 0) {
-        umkmContainer.innerHTML = 'Tidak ada UMKM dengan rating 4 ke atas.';
+        umkmContainer.innerHTML = '<p class="blank-information">Belum ada UMKM dengan rating 4 ke atas.</p>';
       } else {
         filteredUmkms.forEach((umkm) => {
           umkmContainer.innerHTML += createUmkmSliderTemplate(umkm);

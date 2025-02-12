@@ -13,7 +13,7 @@ const renderUmkm = async (list) => {
     umkmContainer.innerHTML += createUmkmItemTemplate(umkm);
   });
   if (umkmContainer.innerHTML === '') {
-    umkmContainer.innerHTML = 'Tidak ada umkm yang ditemukan.';
+    umkmContainer.innerHTML = 'Belum ada UMKM yang terdaftar.';
   }
 };
 

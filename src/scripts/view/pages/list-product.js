@@ -11,6 +11,9 @@ const renderProdukt = async (list) => {
   list.forEach((product) => {
     productContainer.innerHTML += createFreeProductItemTemplate(product);
   });
+  if (productContainer.innerHTML === '') {
+    productContainer.innerHTML = 'Belum ada produk yang terdaftar.';
+  }
 };
 
 const ListProduct = {

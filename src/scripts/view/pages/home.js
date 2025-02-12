@@ -107,7 +107,7 @@ const Home = {
     const allProductList = await ProductsDbSource.getProducts();
 
     if (!allProductList || allProductList.length === 0) {
-      productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
+      productContainer.innerHTML = '<p class="blank-information">Belum ada produk untuk ditampilkan.</p>';
     } else {
       // Membuat objek untuk menyaring satu produk per `umkm_id`
       const uniqueProducts = {};
@@ -121,7 +121,7 @@ const Home = {
       const filteredProductList = Object.values(uniqueProducts);
 
       if (filteredProductList.length === 0) {
-        productContainer.innerHTML = 'Tidak ada produk untuk ditampilkan.';
+        productContainer.innerHTML = '<p class="blank-information">Belum ada produk untuk ditampilkan.</p>';
       } else {
         filteredProductList.forEach((product) => {
           productContainer.innerHTML += createFreeProductItemTemplate(product);
@@ -143,7 +143,7 @@ const Home = {
     });
 
     if (reviewContainer.innerHTML === '') {
-      reviewContainer.innerHTML = 'Tidak ada review untuk ditampilkan.';
+      reviewContainer.innerHTML = '';
     }
     // --------------------------------------------
     const infiniteScroll = document.querySelector('.infinite-scroll');

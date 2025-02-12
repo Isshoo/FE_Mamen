@@ -70,7 +70,7 @@ class FooterBar extends HTMLElement {
                 </li>
 
                 <li>
-                  <a href="https://www.linkedin.com/in/mutiara-pandejlaki-0856431b6/" class="footer-link">Muti St.</a>
+                  <a href="https://www.linkedin.com/in/sesilia-riliany-mutiara-pandejlaki-0856431b6/" class="footer-link">Muti St.</a>
                 </li>
 
                 <li>
@@ -78,7 +78,7 @@ class FooterBar extends HTMLElement {
                 </li>
 
                 <li>
-                  <a href="www.linkedin.com/in/algyngenget" class="footer-link">Algy Nt.</a>
+                  <a href="https://www.linkedin.com/in/algyngenget/" class="footer-link">Algy Nt.</a>
                 </li>
               </ul>
             </div>
