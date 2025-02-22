@@ -162,7 +162,9 @@ const DetailUmkm = {
           await renderReviews(umkmId);
         }).then(async () => {
           const umkm = await UmkmsDbSource.getUmkmById(umkmId);
-          renderUmkm(umkm);
+          await renderUmkm(umkm);
+          await renderProducts(umkmId);
+          await renderCategories(umkmId);
         });
       });
       formNewReview.reset();
