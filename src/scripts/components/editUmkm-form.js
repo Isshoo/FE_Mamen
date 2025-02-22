@@ -104,7 +104,7 @@ class editUmkmForm extends HTMLElement {
               </div>
               <div class="yearCon">
                 <label for="year">Tahun Dibuat :</label>
-                <input type="number" id="yearEdit" name="year" min="1900" max="2024" required>
+                <input type="number" id="yearEdit" name="year" max="2025" required>
               </div>
               <div class="descCon">
                 <label for="description">Deskripsi :</label>
